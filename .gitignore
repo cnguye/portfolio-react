@@ -371,3 +371,8 @@ MigrationBackup/
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+# custom
+README.old.md
+package-lock.json
+package.json
