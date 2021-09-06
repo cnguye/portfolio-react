@@ -1,23 +1,29 @@
-import Topbar from "./components/topbar/Topbar";
-import Intro from "./components/intro/Intro";
-import Portfolio from "./components/portfolio/Portfolio";
-import Works from "./components/works/Works";
-import Testimonials from "./components/testimonials/Testimonials";
-import Contact from "./components/contact/Contact";
+import NavBar from "./components/main-portfolio/navbar/NavBar";
+import NavMenu from "./components/main-portfolio/navmenu/NavMenu";
+import Contact from "./components/main-portfolio/contact/Contact";
+
+import PortfolioMain from "./components/main-portfolio/portfolioMain/PortfolioMain";
+import ProjectsMain from "./components/projects/ProjectsMain";
+
+import { useState } from "react";
 import "./app.scss";
 
+import { Route, BrowserRouter as Router } from "react-router-dom";
+
 function App() {
+    const [menuOpen, setMenuOpen] = useState(true);
     return (
-        <div className="app">
-            <Topbar />
-            <div className="sections">
-                <Intro />
-                <Portfolio />
-                <Works />
-                <Testimonials />
-                <Contact />
+        <Router>
+            <div className="app">
+                <NavBar menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
+                <NavMenu menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
+                <div className="sections" onClick={()=>setMenuOpen(false)}>
+                    <Route exact path="/" component={PortfolioMain} />
+                    <Route exact path="/projects" component={ProjectsMain} />
+                    <Contact />
+                </div>
             </div>
-        </div>
+        </Router>
     );
 }
 

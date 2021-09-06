@@ -1,12 +1,14 @@
+@import "./global.scss";
+
 .app {
     height: 100vh;
-
     .sections {
+        overflow-x: hidden;
         width: 100%;
-        height: calc(100vh - 70px);
+        height: calc(100vh - #{$navBarHeight});
         background-color: darkmagenta;
         position: relative;
-        top: 70px;
+        top: 120px;
         
         // scrollbar functionality
         scroll-behavior: smooth;
@@ -18,8 +20,16 @@
 
         > * {
             width: 100vw;
-            height: calc(100vh - 70px);
+            height: calc(100vh - #{$navBarHeight});
             scroll-snap-align: start
+        }
+    }
+}
+
+@media (min-width: $media-md) {
+    .app {
+        .sections {
+            top: $media800NavBarHeight;
         }
     }
 }

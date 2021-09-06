@@ -1,12 +1,12 @@
 import React from "react";
-import "./topbar.scss";
+import "./navbar.scss";
 import { Phone, Mail } from "@material-ui/icons";
 
-export default function Topbar() {
+export default function NavBar({ menuOpen, setMenuOpen }) {
     return (
-        <div className="topbar">
-            <div className="wrapper">
-                <div className="left">
+        <div className={"nav " + (menuOpen && "active")}>
+            <div className="nav__wrapper">
+                <div className="nav__left">
                     <a href="#intro" className="logo">
                         christopher nguyen.
                     </a>
@@ -25,7 +25,15 @@ export default function Topbar() {
                         </div>
                     </div>
                 </div>
-                <div className="right"></div>
+                <button
+                    onClick={() => setMenuOpen(!menuOpen)}
+                    className="nav__right "
+                >
+                    <span className="hamburger"></span>
+                </button>
+            </div>
+            <div className="nav__slider">
+
             </div>
         </div>
     );
