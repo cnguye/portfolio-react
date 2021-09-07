@@ -11,7 +11,7 @@ import "./app.scss";
 import { Route, BrowserRouter as Router } from "react-router-dom";
 
 function App() {
-    const [menuOpen, setMenuOpen] = useState(true);
+    const [menuOpen, setMenuOpen] = useState(false);
     return (
         <Router>
             <div className="app">
