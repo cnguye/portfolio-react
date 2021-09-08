@@ -27,16 +27,16 @@
     padding: 0.5rem;
     font-size: 2rem;
     border: none;
-    background: white;
+    background: $mainColorLite;
   }
   form button {
-    color: #ff6f47;
-    background: #f7fffe;
+    color: $secondaryColor;
+    background: $mainColor;
     cursor: pointer;
     transition: all 0.3s ease;
   }
   form button:hover {
-    background: #ff6f47;
+    background: $secondaryColor;
     color: white;
   }
   .todo__container {
@@ -52,7 +52,7 @@
   
   .todo {
     margin: 0.5rem;
-    background: white;
+    background: $mainColorLite;
     font-size: 1.5rem;
     color: black;
     display: flex;
@@ -63,6 +63,7 @@
 
   .filter-todo {
     padding: 1rem;
+    background-color: $mainColorLite;
   }
   .todo li {
     flex: 1;
@@ -70,8 +71,8 @@
   
   .btn--trash,
   .btn--complete {
-    background: #ff6f47;
-    color: white;
+    background: rgb(255, 56, 21);
+    color: $secondaryColor;
     border: none;
     padding: 1rem;
     cursor: pointer;
@@ -118,7 +119,7 @@
     overflow: hidden;
   }
   select {
-    color: #ff6f47;
+    color: $secondaryColor;
     font-family: "Poppins", sans-serif;
     cursor: pointer;
     width: 12rem;
@@ -130,7 +131,7 @@
     top: 0;
     right: 0;
     padding: 1rem;
-    background: #ff6f47;
+    background: $mainColor;
     cursor: pointer;
     pointer-events: none;
   }

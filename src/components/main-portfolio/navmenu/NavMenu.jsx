@@ -7,6 +7,7 @@ export default function NavMenu({ menuOpen, setMenuOpen }) {
             onClick={() => setMenuOpen(false)}
         >
             <ul className="nav__list">
+                
                 <li className="nav__item">
                     <a className="nav__link" href="#intro">
                         Intro

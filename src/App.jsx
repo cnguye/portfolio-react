@@ -1,23 +1,32 @@
 import NavBar from "./components/main-portfolio/navbar/NavBar";
 import NavMenu from "./components/main-portfolio/navmenu/NavMenu";
 import Contact from "./components/main-portfolio/contact/Contact";
+import ScrollToTop from "./components/ScrollToTop";
 
 import PortfolioMain from "./components/main-portfolio/portfolioMain/PortfolioMain";
 import ProjectsMain from "./components/projects/ProjectsMain";
 
 import { useState } from "react";
+
 import "./app.scss";
 
 import { Route, BrowserRouter as Router } from "react-router-dom";
 
 function App() {
-    const [menuOpen, setMenuOpen] = useState(false);
+    const [menuOpen, setMenuOpen] = useState(true);
+    const [navMenu, setNavMenu] = useState([]);
+
     return (
         <Router>
             <div className="app">
                 <NavBar menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
                 <NavMenu menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
-                <div className="sections" onClick={()=>setMenuOpen(false)}>
+                <div
+                    id="section__body"
+                    className="sections"
+                    onClick={() => setMenuOpen(false)}
+                >
+                    <ScrollToTop />
                     <Route exact path="/" component={PortfolioMain} />
                     <Route exact path="/projects" component={ProjectsMain} />
                     <Contact />
