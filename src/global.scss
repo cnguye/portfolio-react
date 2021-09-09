@@ -37,6 +37,19 @@ $media800NavBarHeight: 120px;
 
 }
 
+.section__title {
+    font-size: 40px;
+}
+
+.wrapper--arrow {
+    bottom: 0;
+    margin-bottom: 20px;
+    position: absolute;
+    left: 50%;
+    transform:translateX(-50%);
+    animation: blink 1.5s infinite alternate;
+}
+
 // shake animation
 @keyframes shake {
     0% {

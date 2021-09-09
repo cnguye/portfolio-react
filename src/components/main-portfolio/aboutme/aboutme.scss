@@ -1,3 +1,63 @@
-.testimonials {
-    background-color: lightcoral;
+@import "../../../global.scss";
+
+.about-me {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    padding: 2em 0;
+    height: 90%;
+
+    .section__title--services::after {
+        content: "";
+        display: block;
+        width: 2em;
+        height: 2px;
+        margin: 0.5em auto 1em;
+        background: $secondaryColor;
+        opacity: 0.25;
+    }
+
+    .section-background-img {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        left: 0;
+        background-color: $mainColor;
+        background-blend-mode: multiply;
+        background-image: url(../../../assets/laptop-background.jpg);
+        background-size: cover;
+        filter: blur(2px);
+        z-index: -1;
+    }
+
+    .services {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+        
+        .service {
+            h3 {
+                font-size: 1.5rem;
+                padding-bottom: 1em;
+            }
+
+            margin: 30px;
+            padding: 1em;
+            color: rgba($secondaryColor, 1);
+            font-size: 1.2rem;
+            background-color: rgba(black, 0.8);
+        }
+
+        @media (min-width: $tablet){
+            flex-direction: row;
+            width: 60%
+        }
+    }
+    .wrapper--arrow {
+        color: $secondaryColor;
+    }
 }

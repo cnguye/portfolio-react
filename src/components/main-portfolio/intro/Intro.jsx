@@ -34,9 +34,9 @@ export default function Intro() {
                             className="right__wrapper--title-animation"
                         ></span>
                     </h3>
-                    <a href="#projects" className="right__wrapper--link">
+                    <a href="#about-me" className="right__wrapper--link">
                         <ExpandMore
-                            className="right__wrapper--arrow"
+                            className="wrapper--arrow"
                             fontSize={"large"}
                         />
                     </a>

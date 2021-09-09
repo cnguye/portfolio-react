@@ -77,10 +77,6 @@
                 &:active {
                     color: $mainColor;
                 }
-
-                .right__wrapper--arrow {
-                    animation: blink 1.5s infinite alternate;
-                }
             }
 
             @media (min-width: $tablet) {
