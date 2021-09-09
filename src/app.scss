@@ -25,7 +25,7 @@
     }
 }
 
-@media (min-width: $media-md) {
+@media (min-width: $desktop) {
     .app {
         .sections {
             top: $media800NavBarHeight;

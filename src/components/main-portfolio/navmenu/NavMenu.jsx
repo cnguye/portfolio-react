@@ -8,7 +8,10 @@ export default function NavMenu({ navMenu, menuOpen, setMenuOpen }) {
         >
             <ul className="nav__list">
                 {navMenu.map((navItem) => (
-                    <li className="nav__item" key={"navItem__key--" + navItem.href}>
+                    <li
+                        className="nav__item"
+                        key={"navItem__key--" + navItem.href}
+                    >
                         <a className="nav__link" href={"#" + navItem.href}>
                             {navItem.title}
                         </a>

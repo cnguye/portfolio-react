@@ -13,21 +13,20 @@ import "./app.scss";
 import { Route, BrowserRouter as Router } from "react-router-dom";
 
 function App() {
-
     // This is probably bad practice...?
     const menuItems = {
         home: [
             {
-                title: "Intro",
+                title: "Home",
                 href: "intro",
+            },
+            {
+                title: "About Me",
+                href: "about-me",
             },
             {
                 title: "Projects",
                 href: "projects",
-            },
-            {
-                title: "Testimonials",
-                href: "testimonials",
             },
             {
                 title: "Contact me",
@@ -49,17 +48,17 @@ function App() {
             },
         ],
     };
-    const [menuOpen, setMenuOpen] = useState(true);
+    const [menuOpen, setMenuOpen] = useState(false);
 
     // is this bad practice...?
     const [navMenu, setNavMenu] = useState(() => {
         switch (window.location.pathname) {
             case "/":
-                return (menuItems.home);
+                return menuItems.home;
             case "/projects":
-                return (menuItems.projects);
+                return menuItems.projects;
             default:
-                return (menuItems.home);
+                return menuItems.home;
         }
     });
 
@@ -69,6 +68,7 @@ function App() {
                 <NavBar
                     menuOpen={menuOpen}
                     setMenuOpen={setMenuOpen}
+                    navMenu={navMenu}
                     setNavMenu={setNavMenu}
                     menuItems={menuItems}
                 />
@@ -78,7 +78,7 @@ function App() {
                     setMenuOpen={setMenuOpen}
                 />
                 <div
-                    id="section__body"
+                    id="sections"
                     className="sections"
                     onClick={() => setMenuOpen(false)}
                 >

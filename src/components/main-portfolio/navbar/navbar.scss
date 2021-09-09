@@ -15,6 +15,7 @@
 
     .nav__wrapper {
         padding: 10px 30px;
+        margin-top: 5px;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -51,15 +52,17 @@
                 );
                 background-size: 100% 200%;
                 background-position: 0% 0%;
+
                 &:hover {
                     // color transition
                     transition: all 1.5s cubic-bezier(0, 0, 0.23, 1);
+
                     background-position: 100% 100%;
 
                     font-size: 1.6rem;
 
                     /* Start the shake animation and make the animation last for 0.5 seconds */
-                    animation: shake 1s;
+                    animation: shake 1s infinite, glow 1s ease-in-out infinite alternate;;
 
                     /* When the animation is finished, start again */
                     animation-iteration-count: 1.2s;
@@ -151,7 +154,7 @@
     }
 }
 
-@media (min-width: $media-md) {
+@media (min-width: $desktop) {
     .nav {
         height: 120px;
         .nav__wrapper {

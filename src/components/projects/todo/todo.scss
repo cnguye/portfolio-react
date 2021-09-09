@@ -17,7 +17,7 @@
   
   header,
   form {
-    min-height: 20vh;
+    min-height: 10vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -47,8 +47,16 @@
   }
   
   .todo__list {
-    min-width: 50%;
+    min-width: 300px;
     list-style: none;
+    margin-bottom: 1em;
+
+    overflow: scroll;
+    max-height: 250px;
+    scrollbar-width: none;
+    &::-webkit-scrollbar {
+        display: none;
+    }
   }
   
   .todo {

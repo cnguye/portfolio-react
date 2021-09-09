@@ -1,3 +1,5 @@
+@import "../../../global.scss";
+
 .contact {
     background-color: lightblue;
 }
@@ -8,7 +10,26 @@
     justify-content: center;
     align-items: center;
 
-    .projects--link {
+    .projects__link {
         margin-top: 1rem;
+        .projects__Link {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-decoration: none;
+            color: $secondaryColor;
+            
+            &:hover {
+                color: $click-active-dark;
+            }
+    
+            &:active {
+                color: $click-active-light;
+            }
+        }
+        .projects__Link--item + .projects__Link--item {
+            margin-left: 5px;
+        }
+
     }
 }

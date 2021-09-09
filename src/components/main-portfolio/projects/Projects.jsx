@@ -3,6 +3,7 @@ import ProjectsMain from "../../projects/ProjectsMain";
 // import ProjectsMain from "../../projects/ProjectsMain";
 import { Link } from "react-router-dom";
 
+import { ExitToApp } from "@material-ui/icons";
 import "./projects.scss";
 
 export default function Projects() {
@@ -10,7 +11,12 @@ export default function Projects() {
     return (
         <div id="projects" className="projects">
             <ProjectsMain />
-            <div className="projects--link"><Link to="/projects">See Projects</Link></div>
+            <div className="projects__link">
+                <Link to="/projects" className="projects__Link">
+                    <span className="projects__Link--item projects_Link--link">See Projects</span>
+                    <ExitToApp className="projects__Link--item" />
+                </Link>
+            </div>
         </div>
     );
 }

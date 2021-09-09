@@ -1,10 +1,40 @@
-.projects { 
+@import "../../global.scss";
+
+.projects {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 
-    .projects--link {
-        margin-top: 1rem;
+    .project__item {
+        max-height: 600px;
     }
+
+    .projects__link {
+        margin-top: 1rem;
+        text-decoration: none;
+        color: $secondaryColor;
+        .projects__Link {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-decoration: none;
+            color: $secondaryColor;
+        }
+        .projects__Link--item + .projects__Link--item {
+            margin-left: 5px;
+        }
+
+        &:hover {
+            color: $click-active-dark;
+        }
+
+        &:active {
+            color: $click-active-light;
+        }
+    }
+}
+
+.project__body {
+    padding: 1.5em 0em;
 }

@@ -1,35 +1,101 @@
 @import "../../../global.scss";
 
 .intro {
-    background-color: rgb(178, 156, 32);
+    background-color: $secondaryColor;
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 3em;
+    .left {
+        flex: 3;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        overflow: hidden;
+        .left__wrapper {
+            display: flex;
+            justify-content: center;
+            margin-top: 1em;
+            width: 100%;
+            .left__img {
+                border-radius: 50%;
+                max-width: 300px;
+                padding: 0 1em;
+
+                @media (min-width: $tablet) {
+                    max-width: 100%;
+
+                    border-radius: 0%;
+                    border-top-left-radius: 50%;
+                    border-bottom-left-radius: 50%;
+                    border-top-right-radius: 50%;
+                }
+            }
+        }
+
+        @media (min-width: $tablet) {
+            flex: 5;
+        }
+    }
     .right {
-        .hamburger {
-            display: block;
-            position: relative;
-        }
-        .hamburger,
-        .hamburger::before,
-        .hamburger::after {
-            background: $mainColor;
-            width: 3em;
-            height: 3px;
-            border-radius: 1em;
-            transition: transform 250ms ease-in-out;
-        }
-        .hamburger::before,
-        .hamburger::after {
-            content: "";
-            position: absolute;
-            left: 0;
-            right: 0;
-        }
+        color: $mainColor;
+        flex: 6;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        position: relative;
 
-        .hamburger::before {
-            top: 6px;
-        }
+        .right__wrapper {
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
 
-        .hamburger::after {
-            bottom: 6px;
+            .right__wrapper--intro {
+                font-size: 40px;
+            }
+            .right__wrapper--name {
+                font-size: 55px;
+            }
+            .right__wrapper--title {
+                font-size: 30px;
+                .right__wrapper--title-animation {
+                    font-size: inherit;
+                    color: $mainColorSplitComp;
+                }
+            }
+            .right__wrapper--link {
+                position: absolute;
+                bottom: 0;
+                color: $mainColor;
+
+                &:hover {
+                    color: $click-active-dark;
+                }
+
+                &:active {
+                    color: $mainColor;
+                }
+
+                .right__wrapper--arrow {
+                    animation: blink 1.5s infinite alternate;
+                }
+            }
+
+            @media (min-width: $tablet) {
+                align-items: flex-start;
+                padding-top: 50%;
+                justify-content: center;
+                margin-bottom: 20%;
+            }
         }
+        @media (min-width: $tablet) {
+            align-items: flex-start;
+        }
+    }
+
+    @media (min-width: $tablet) {
+        flex-direction: row;
     }
 }

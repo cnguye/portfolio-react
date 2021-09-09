@@ -1,9 +1,11 @@
-import React, {  } from "react";
+import React from "react";
 import Todo from "./todo/TodoMain";
 import Calculator from "./calculator/Calculator";
-import "./projectsMain.scss";
-import { Card } from "@material-ui/core";
 import { Link, useLocation } from "react-router-dom";
+import { Card } from "@material-ui/core";
+
+import { ExitToApp } from "@material-ui/icons";
+import "./projectsMain.scss";
 
 export default function ProjectsMain({ setNavMenu }) {
     const displayNone = {
@@ -19,8 +21,11 @@ export default function ProjectsMain({ setNavMenu }) {
                 <Calculator />
             </div>
             {useLocation().pathname === "/projects" && (
-                <div className="projects--link">
-                    <Link to="/">Home</Link>
+                <div className="projects__link">
+                    <Link to="/" className="projects__Link">
+                        <span className="projects__Link--item projects_Link--link">Home</span>
+                        <ExitToApp className="projects__Link--item" />
+                    </Link>
                 </div>
             )}
         </div>
