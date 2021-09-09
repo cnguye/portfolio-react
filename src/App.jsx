@@ -13,22 +13,83 @@ import "./app.scss";
 import { Route, BrowserRouter as Router } from "react-router-dom";
 
 function App() {
+
+    // This is probably bad practice...?
+    const menuItems = {
+        home: [
+            {
+                title: "Intro",
+                href: "intro",
+            },
+            {
+                title: "Projects",
+                href: "projects",
+            },
+            {
+                title: "Testimonials",
+                href: "testimonials",
+            },
+            {
+                title: "Contact me",
+                href: "contact-me",
+            },
+        ],
+        projects: [
+            {
+                title: "Todo",
+                href: "todo",
+            },
+            {
+                title: "Calculator",
+                href: "caculator",
+            },
+            {
+                title: "Contact me",
+                href: "contact-me",
+            },
+        ],
+    };
     const [menuOpen, setMenuOpen] = useState(true);
-    const [navMenu, setNavMenu] = useState([]);
+
+    // is this bad practice...?
+    const [navMenu, setNavMenu] = useState(() => {
+        switch (window.location.pathname) {
+            case "/":
+                return (menuItems.home);
+            case "/projects":
+                return (menuItems.projects);
+            default:
+                return (menuItems.home);
+        }
+    });
 
     return (
         <Router>
             <div className="app">
-                <NavBar menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
-                <NavMenu menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
+                <NavBar
+                    menuOpen={menuOpen}
+                    setMenuOpen={setMenuOpen}
+                    setNavMenu={setNavMenu}
+                    menuItems={menuItems}
+                />
+                <NavMenu
+                    navMenu={navMenu}
+                    menuOpen={menuOpen}
+                    setMenuOpen={setMenuOpen}
+                />
                 <div
                     id="section__body"
                     className="sections"
                     onClick={() => setMenuOpen(false)}
                 >
                     <ScrollToTop />
-                    <Route exact path="/" component={PortfolioMain} />
-                    <Route exact path="/projects" component={ProjectsMain} />
+                    <Route exact path="/">
+                        <PortfolioMain setNavMenu={setNavMenu} />
+                    </Route>
+
+                    <Route exact path="/projects">
+                        <ProjectsMain setNavMenu={setNavMenu} />
+                    </Route>
                     <Contact />
                 </div>
             </div>

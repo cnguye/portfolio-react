@@ -1,16 +1,29 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import { withRouter } from "react-router-dom";
 import "./navbar.scss";
 import { Phone, Mail } from "@material-ui/icons";
 
-export default function NavBar({ menuOpen, setMenuOpen }) {
+function NavBar({ menuOpen, setMenuOpen, history, setNavMenu, menuItems }) {
     const [logoText, setLogoText] = useState("christopher nguyen.");
     const logoTextHandler = () => {
-        if(logoText === 'christopher nguyen.')
-            setLogoText('beam me up');
-        else
-            setLogoText('christopher nguyen.');
-            console.log('hi');
+        if (logoText === "christopher nguyen.") setLogoText("beam me up");
+        else setLogoText("christopher nguyen.");
     };
+    useEffect(() => {
+        history.listen(() => {
+            switch (window.location.pathname) {
+                case "/":
+                    setNavMenu(menuItems.home);
+                    break;
+                case "/projects":
+                    setNavMenu(menuItems.projects);
+                    break;
+                default:
+                    setNavMenu(menuItems.home);
+            }
+        });
+    }, [history, menuItems, setNavMenu]);
+
     return (
         <div className={"nav " + (menuOpen && "active")}>
             <div className="nav__wrapper">
@@ -60,3 +73,5 @@ export default function NavBar({ menuOpen, setMenuOpen }) {
         </div>
     );
 }
+
+export default withRouter(NavBar);

@@ -1,3 +1,10 @@
-.project__item { 
-    padding: 2rem;
+.projects { 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    .projects--link {
+        margin-top: 1rem;
+    }
 }

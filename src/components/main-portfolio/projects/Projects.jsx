@@ -3,7 +3,6 @@ import ProjectsMain from "../../projects/ProjectsMain";
 // import ProjectsMain from "../../projects/ProjectsMain";
 import { Link } from "react-router-dom";
 
-
 import "./projects.scss";
 
 export default function Projects() {
