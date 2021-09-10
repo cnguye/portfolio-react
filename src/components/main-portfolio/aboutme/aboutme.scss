@@ -50,11 +50,15 @@
             color: rgba($secondaryColor, 1);
             font-size: 1.2rem;
             background-color: rgba(black, 0.8);
+            @media (min-width: $desktop){
+                margin: 5px;
+            }
         }
 
-        @media (min-width: $tablet){
+        @media (min-width: $desktop){
             flex-direction: row;
-            width: 60%
+            justify-content: space-between;
+            width: 80%;
         }
     }
     .wrapper--arrow {
