@@ -1,15 +1,15 @@
 @import "../../../global.scss";
 
-.contact {
-    background-color: lightblue;
-}
-
-.projects {
+.section__projects {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-
+    background-image: linear-gradient(
+        120deg,
+        $mainColor 0%,
+        $secondaryColor 100%
+    );
     .projects__link {
         margin-top: 1rem;
         .projects__Link {

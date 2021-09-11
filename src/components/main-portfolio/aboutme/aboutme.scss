@@ -1,23 +1,21 @@
 @import "../../../global.scss";
 
-.about-me {
+.section__about-me {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     position: relative;
-    padding: 2em 0;
-    height: 90%;
 
-    .section__title--services::after {
-        content: "";
-        display: block;
-        width: 2em;
-        height: 2px;
-        margin: 0.5em auto 1em;
-        background: $secondaryColor;
-        opacity: 0.25;
-    }
+    // .section__title--services::after {
+    //     content: "";
+    //     display: block;
+    //     width: 2em;
+    //     height: 2px;
+    //     margin: 0.5em auto 1em;
+    //     background: $secondaryColor;
+    //     opacity: 0.25;
+    // }
 
     .section-background-img {
         position: absolute;
@@ -37,27 +35,29 @@
         display: flex;
         flex-direction: column;
         justify-content: center;
+        align-items: center;
         text-align: center;
-        
+
         .service {
             h3 {
                 font-size: 1.5rem;
                 padding-bottom: 1em;
             }
-
             margin: 30px;
             padding: 1em;
             color: rgba($secondaryColor, 1);
             font-size: 1.2rem;
             background-color: rgba(black, 0.8);
-            @media (min-width: $desktop){
+            @media (min-width: $desktop) {
                 margin: 5px;
+                max-width: 500px;
+                min-height: 350px;
             }
         }
 
-        @media (min-width: $desktop){
+        @media (min-width: $desktop) {
             flex-direction: row;
-            justify-content: space-between;
+            align-items: flex-start;
             width: 80%;
         }
     }

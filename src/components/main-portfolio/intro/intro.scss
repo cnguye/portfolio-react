@@ -1,21 +1,20 @@
 @import "../../../global.scss";
 
-.intro {
+.section__intro {
     background-color: $secondaryColor;
     display: flex;
     flex-direction: column;
-    padding-bottom: 3em;
+    height: 100%;
     .left {
-        flex: 3;
+        flex: 6;
         display: flex;
         align-items: center;
         justify-content: center;
-        position: relative;
         overflow: hidden;
         .left__wrapper {
             display: flex;
             justify-content: center;
-            margin-top: 1em;
+            padding: 1em;
             width: 100%;
             .left__img {
                 border-radius: 50%;
@@ -44,9 +43,8 @@
         flex-direction: column;
         align-items: center;
         position: relative;
-
         .right__wrapper {
-            height: 100%;
+            // height: 100%;
             display: flex;
             flex-direction: column;
             justify-content: flex-start;
@@ -65,29 +63,37 @@
                     color: $mainColorSplitComp;
                 }
             }
-            .right__wrapper--link {
-                position: absolute;
-                bottom: 0;
-                color: $mainColor;
-
-                &:hover {
-                    color: $click-active-dark;
-                }
-
-                &:active {
+            .wrapper__link--container {
+                width: 100%;
+                display: flex;
+                justify-content: center;
+                .right__wrapper--link {
+                    bottom: 0;
                     color: $mainColor;
+
+                    &:hover {
+                        color: $click-active-dark;
+                    }
+
+                    &:active {
+                        color: $mainColor;
+                    }
+
+                    .wrapper--arrow {
+                        left: 1.2em;
+                    }
                 }
             }
 
             @media (min-width: $tablet) {
                 align-items: flex-start;
-                padding-top: 50%;
                 justify-content: center;
-                margin-bottom: 20%;
             }
         }
         @media (min-width: $tablet) {
+            padding-top: 20vh;
             align-items: flex-start;
+            justify-content: center;
         }
     }
 

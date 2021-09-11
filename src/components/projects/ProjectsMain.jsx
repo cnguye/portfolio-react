@@ -14,16 +14,20 @@ export default function ProjectsMain({ setNavMenu }) {
 
     return (
         <div id="projects" className="projects">
-            <Card className="project__item">
-                <Todo />
-            </Card>
+            <div className="project__item">
+                <Card>
+                    <Todo />
+                </Card>
+            </div>
             <div className="project__item" style={displayNone}>
                 <Calculator />
             </div>
             {useLocation().pathname === "/projects" && (
                 <div className="projects__link">
                     <Link to="/" className="projects__Link">
-                        <span className="projects__Link--item projects_Link--link">Home</span>
+                        <span className="projects__Link--item projects_Link--link">
+                            Home
+                        </span>
                         <ExitToApp className="projects__Link--item" />
                     </Link>
                 </div>

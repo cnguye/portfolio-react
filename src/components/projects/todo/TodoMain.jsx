@@ -53,8 +53,8 @@ export default function Todo() {
     };
 
     return (
-        <div id="todo" className="project__body">
-            <header>
+        <div id="todo" className="project__body project__body--todo">
+            <header className="project__header project__header--todo">
                 <h1>Todo List</h1>
             </header>
             <Form

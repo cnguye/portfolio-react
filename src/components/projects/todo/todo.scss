@@ -1,52 +1,63 @@
 @import "../../../global.scss";
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-  body {
-    background-image: linear-gradient(120deg, $mainColor 0%, $secondaryColor 100%);
-    color: white;
-    font-family: "Poppins", sans-serif;
-    min-height: 100vh;
-  }
-  header {
-    font-size: 2rem;
-  }
-  
-  header,
-  form {
-    min-height: 10vh;
+.project__body--todo {
+    background-color: $secondaryColor;
+    color: $mainColor;
+    min-height: 400px;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+.project__header {
+    font-size: 2rem;
+}
+
+.project__header,
+.project__form{
+    display: flex;
+    // justify-content: center;
     align-items: center;
     padding: 0 1em;
-  }
-  form input,
-  form button {
+}
+.project__form .todo--input,
+.project__form button {
     padding: 0.5rem;
     font-size: 2rem;
     border: none;
     background: $mainColorLite;
-  }
-  form button {
+}
+
+.project__form--input { 
+    display: flex;
+}
+
+.project__form button {
     color: $secondaryColor;
     background: $mainColor;
     cursor: pointer;
     transition: all 0.3s ease;
-  }
-  form button:hover {
+}
+.project__form button:hover {
     background: $secondaryColor;
     color: white;
-  }
-  .todo__container {
+}
+
+@media (max-width: $tablet) {
+    .todo--input {
+        width: 200px;
+    }
+    .form__select {
+        // max-width: 65%;
+    }
+}
+
+.todo__container {
     display: flex;
     justify-content: center;
     align-items: center;
-  }
-  
-  .todo__list {
+}
+
+.todo__list {
     min-width: 300px;
     list-style: none;
     margin-bottom: 1em;
@@ -57,9 +68,9 @@
     &::-webkit-scrollbar {
         display: none;
     }
-  }
-  
-  .todo {
+}
+
+.todo {
     margin: 0.5rem;
     background: $mainColorLite;
     font-size: 1.5rem;
@@ -68,49 +79,34 @@
     justify-content: space-between;
     align-items: center;
     transition: all 1s ease;
-  }
+}
 
-  .filter-todo {
+.filter-todo {
     padding: 1rem;
     background-color: $mainColorLite;
-  }
-  .todo li {
+}
+.todo li {
     flex: 1;
-  }
-  
-  .btn--trash,
-  .btn--complete {
-    background: rgb(255, 56, 21);
-    color: $secondaryColor;
-    border: none;
+}
+
+.btn--trash,
+.btn--complete {
     padding: 1rem;
-    cursor: pointer;
     font-size: 1rem;
-  }
-  .btn--complete {
-    background: rgb(11, 212, 162);
-  }
-  .todo__item {
-    padding: 0rem 0.5rem;
-  }
-  
-  .fa-trash,
-  .fa-check {
-    pointer-events: none;
-  }
-  
-  .fall {
+}
+
+.fall {
     transform: translateY(10rem) rotateZ(20deg);
     opacity: 0;
-  }
-  
-  .completed {
+}
+
+.completed {
     text-decoration: line-through;
     opacity: 0.5;
-  }
-  
-  /*CUSTOM SELECTOR */
-  select {
+}
+
+/*CUSTOM SELECTOR */
+.project__form--select {
     -webkit-appearance: none;
     -moz-appearance: none;
     -ms-appearance: none;
@@ -119,22 +115,22 @@
     box-shadow: none;
     border: 0 !important;
     background-image: none;
-  }
-  
-  /* Custom Select */
-  .select {
+}
+
+/* Custom Select */
+.form__select {
     margin-left: 1rem;
     position: relative;
     overflow: hidden;
-  }
-  select {
+}
+.form__select {
     color: $secondaryColor;
     font-family: "Poppins", sans-serif;
     cursor: pointer;
     width: 12rem;
-  }
-  /* Arrow */
-  .select::after {
+}
+/* Arrow */
+.form__select::after {
     content: "\25BC";
     position: absolute;
     top: 0;
@@ -143,11 +139,10 @@
     background: $mainColor;
     cursor: pointer;
     pointer-events: none;
-  }
-  /* Transition */
-  /*
+}
+/* Transition */
+/*
   .select:hover::after {
     transform: scale(1.5);
   }
   */
-  

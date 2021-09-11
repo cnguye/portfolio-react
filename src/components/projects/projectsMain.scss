@@ -5,9 +5,20 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    width: 100%;
 
     .project__item {
-        max-height: 600px;
+        max-width: 95%;
+        margin: 1em 0;
+        @media (min-width: $tablet) {
+            max-height: 600px;
+            max-width: 60%;
+        }
+        width: 100%;
+        height: 100%;
+        padding: 1em;
+        background-color: rgba(black, 0.7);
+        border-radius: 7px;
     }
 
     .projects__link {

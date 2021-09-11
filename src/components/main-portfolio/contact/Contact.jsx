@@ -8,7 +8,7 @@ export default function Contact() {
         e.preventDefault();
     };
     return (
-        <div id="contact-me" className="contact">
+        <div id="contact-me" className="section section__contact">
             <div className="section section__left">
                 <div className="section__left--item img--container">
                     <img

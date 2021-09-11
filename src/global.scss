@@ -9,11 +9,10 @@ $mainFontWeight: 300;
 $click-active-dark: rgb(0, 0, 0);
 $click-active-light: rgb(255, 254, 245);
 
-
 $mainColorLite: rgb(88, 217, 235);
 
-$navBarHeight: 120px;
 $media800NavBarHeight: 120px;
+$navBarHeight: 120px;
 
 // media queries and breakpoints
     $mobile: 375px; // iPhone X 375 x 812
@@ -43,11 +42,29 @@ $media800NavBarHeight: 120px;
 
 .wrapper--arrow {
     bottom: 0;
-    margin-bottom: 20px;
-    position: absolute;
-    left: 50%;
-    transform:translateX(-50%);
+    z-index: 10;
     animation: blink 1.5s infinite alternate;
+}
+
+// buttons
+
+.btn--trash,
+.btn--complete {
+  background: rgb(255, 56, 21);
+  color: $secondaryColor;
+  border: none;
+  cursor: pointer;
+}
+.btn--complete {
+  background: rgb(11, 212, 162);
+}
+.todo__item {
+  padding: 0rem 0.5rem;
+}
+
+.fa-trash,
+.fa-check {
+  pointer-events: none;
 }
 
 // shake animation

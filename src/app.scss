@@ -1,34 +1,39 @@
 @import "./global.scss";
 
 .app {
-    height: 100vh;
     .sections {
         overflow-x: hidden;
         width: 100%;
         height: calc(100vh - #{$navBarHeight});
         position: relative;
-        top: 120px;
-
         // scrollbar functionality
         scroll-behavior: smooth;
-        scroll-snap-type: y mandatory;
+        // scroll-snap-type: y mandatory;
         scrollbar-width: none; // firefox
         &::-webkit-scrollbar {
             display: none;
         }
-
         > * {
             width: 100vw;
-            height: calc(100vh - #{$navBarHeight});
-            scroll-snap-align: start
+            // height: calc(100vh - #{$navBarHeight});
+            // scroll-snap-align: start
         }
+
+        .section {
+            min-height: calc(100vh - #{$navBarHeight});
+            padding: 1em 0;
+        }
+    }
+
+    .offsetNavBar {
+        margin-top: $navBarHeight;
     }
 }
 
 @media (min-width: $desktop) {
     .app {
         .sections {
-            top: $media800NavBarHeight;
+            // top: $media800NavBarHeight;
         }
     }
 }

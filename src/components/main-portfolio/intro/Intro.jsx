@@ -17,7 +17,7 @@ export default function Intro() {
     }, []);
 
     return (
-        <div id="intro" className="intro">
+        <div id="intro" className="section section__intro">
             <div className="left">
                 <div className="left__wrapper">
                     <img className="left__img" src="img/pfp.png" alt="me" />
@@ -34,12 +34,14 @@ export default function Intro() {
                             className="right__wrapper--title-animation"
                         ></span>
                     </h3>
-                    <a href="#about-me" className="right__wrapper--link">
-                        <ExpandMore
-                            className="wrapper--arrow"
-                            fontSize={"large"}
-                        />
-                    </a>
+                    <div className="wrapper__link--container">
+                        <a href="#about-me" className="right__wrapper--link">
+                            <ExpandMore
+                                className="wrapper--arrow"
+                                fontSize={"large"}
+                            />
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>

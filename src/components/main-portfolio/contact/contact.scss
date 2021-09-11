@@ -1,6 +1,7 @@
 @import "../../../global.scss";
 
-.contact {
+.section__contact {
+    background-color: $mainColor;
     display: flex;
     flex-direction: column;
     width: 100vw;
@@ -9,6 +10,7 @@
         display: flex;
         align-items: center;
         justify-content: center;
+        position: relative;
         .img--container {
             border-radius: 50%;
             background-color: $secondaryColor;
@@ -16,6 +18,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
+            margin-top: 1.5em;
             .left__item--img {
                 max-width: 80%;
                 height: auto;
@@ -28,8 +31,32 @@
             }
         }
 
+        &::after {
+            position: absolute;
+            z-index: 10;
+            content: "";
+            display: block;
+            width: 15em;
+            height: 2px;
+            background: $secondaryColor;
+            opacity: 0.25;
+            bottom: 0;
+        }
+
         @media (min-width: $tablet) {
             padding: 1rem;
+
+            &::after {
+                position: relative;
+                content: "";
+                display: block;
+                width: 2px;
+                height: 30em;
+                background: $secondaryColor;
+                opacity: 0.25;
+                bottom: none;
+                left: 6em;
+            }
         }
     }
     .section__right {
@@ -38,7 +65,8 @@
         justify-content: center;
         align-items: flex-start;
         .section__form {
-            height: 70%;
+            width: 80%;
+            height: 100%;
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -49,29 +77,33 @@
                 height: 80%;
                 display: flex;
                 flex-direction: column;
-                align-items: flex-start;
+                align-items: center;
                 justify-content: space-around;
                 input {
-                    width: 300px;
+                    width: 80%;
                     height: 30px;
                     font-size: 14px;
+                    background-color: $secondaryColor;
                 }
                 textarea {
-                    width: 300px;
+                    width: 80%;
                     height: 200px;
                     font-size: 14px;
                     border: none;
                 }
-                .form--submit{
-                    margin-left: 50%;
+                .form--submit {
+                    margin-left: 40%;
                     width: 40%;
-                    transform:translateX(-50%);
+                    transform: translateX(-50%);
                     font-size: 16px;
                     cursor: pointer;
                     font-weight: 500;
+                    background-color: $secondaryColor;
+                    color: $mainColor;
 
                     &:hover {
-                        color: $mainColor;
+                        background-color: $mainColorLite;
+                        color: $secondaryColor;
                     }
                 }
             }
@@ -81,9 +113,21 @@
             height: 70%;
             align-items: center;
             justify-content: center;
-            color: $mainColor;
+            color: $secondaryColor;
             width: 100%;
             text-align: center;
         }
+        @media (min-width: $desktop) {
+            height: 50%;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+        }
+    }
+    @media (min-width: $desktop) {
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        height: 80%;
     }
 }

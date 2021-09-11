@@ -1,7 +1,13 @@
 import React from "react";
 import { Add } from "@material-ui/icons";
 
-export default function Form({ inputText, setInputText, todos, setTodos, setFilter }) {
+export default function Form({
+    inputText,
+    setInputText,
+    todos,
+    setTodos,
+    setFilter,
+}) {
     // write javascript here
     const inputTextHandler = (e) => {
         setInputText(e.target.value);
@@ -22,25 +28,31 @@ export default function Form({ inputText, setInputText, todos, setTodos, setFilt
 
     const statusHandler = (e) => {
         setFilter(e.target.value);
-    }
-    
+    };
+
     return (
-        <form>
-            <input
-                value={inputText}
-                onChange={inputTextHandler}
-                type="text"
-                className="todo-input"
-            />
-            <button
-                onClick={submitTodoHandler}
-                className="todo-button"
-                type="submit"
-            >
-                <Add />
-            </button>
-            <div className="select">
-                <select onChange={statusHandler} name="todos" className="filter-todo">
+        <form className="project__form project__form--todo">
+            <div className="project__form--item project__form--input">
+                <input
+                    value={inputText}
+                    onChange={inputTextHandler}
+                    type="text"
+                    className="todo--input"
+                />
+                <button
+                    onClick={submitTodoHandler}
+                    className="todo-button"
+                    type="submit"
+                >
+                    <Add />
+                </button>
+            </div>
+            <div className="project__form--item  project__form--select">
+                <select
+                    onChange={statusHandler}
+                    name="todos"
+                    className="form__select filter-todo"
+                >
                     <option value="all">All</option>
                     <option value="completed">Completed</option>
                     <option value="incompleted">Incompleted</option>

@@ -79,7 +79,7 @@ function App() {
                 />
                 <div
                     id="sections"
-                    className="sections"
+                    className={"sections " + (!menuOpen && "offsetNavBar")}
                     onClick={() => setMenuOpen(false)}
                 >
                     <ScrollToTop />
@@ -90,7 +90,7 @@ function App() {
                     <Route exact path="/projects">
                         <ProjectsMain setNavMenu={setNavMenu} />
                     </Route>
-                    <Contact />
+                    {/* <Contact /> */}
                 </div>
             </div>
         </Router>

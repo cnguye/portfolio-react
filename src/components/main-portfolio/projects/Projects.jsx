@@ -9,11 +9,13 @@ import "./projects.scss";
 export default function Projects() {
     // let projectsList = ['Calculator', 'Swipeable News', 'Home'];
     return (
-        <div id="projects" className="projects">
+        <div id="projects" className="section section__projects">
             <ProjectsMain />
             <div className="projects__link">
                 <Link to="/projects" className="projects__Link">
-                    <span className="projects__Link--item projects_Link--link">See Projects</span>
+                    <span className="projects__Link--item projects_Link--link">
+                        See Projects
+                    </span>
                     <ExitToApp className="projects__Link--item" />
                 </Link>
             </div>
