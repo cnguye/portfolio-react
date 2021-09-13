@@ -5,12 +5,16 @@
     display: flex;
     flex-direction: column;
     width: 100vw;
+
+    .section__contact--item {
+        padding: 1em 0;
+    }
     .section__contact--left {
-        flex: 5;
         display: flex;
         align-items: center;
         justify-content: center;
         position: relative;
+        padding-top: 0;
         .img--container {
             border-radius: 50%;
             background-color: $secondaryColor;
@@ -40,42 +44,43 @@
             background: $secondaryColor;
             opacity: 0.25;
             bottom: 0;
-            margin-bottom: 20px;
         }
 
         @media (min-width: $tablet) {
             &::after {
-                position: relative;
-                content: "";
                 display: block;
                 width: 2px;
-                height: 30em;
-                background: $secondaryColor;
-                opacity: 0.25;
-                bottom: none;
-                left: 6em;
+                height: 12em;
+                right: 0;
+                bottom: auto;
             }
+        }
+        @media (min-width: $tablet) {
+            flex: 5;
         }
     }
     .section__contact--right {
-        flex: 5;
         display: flex;
         justify-content: center;
-        align-items: flex-start;
+
         .section__form {
             width: 80%;
             display: flex;
             flex-direction: column;
-            justify-content: center;
             .right__item--title {
                 text-align: center;
             }
             .right__item--form {
-                height: 80%;
+                height: 100%;
                 display: flex;
                 flex-direction: column;
                 align-items: center;
-                justify-content: space-around;
+                margin: 1em 0;
+
+                .form__item {
+                    margin: 0.5em 0;
+                }
+
                 input {
                     width: 80%;
                     height: 30px;
@@ -114,14 +119,19 @@
             width: 100%;
             text-align: center;
         }
-        @media (min-width: $desktop) {
+        @media (min-width: $tablet) {
             height: 50%;
             flex-direction: row;
             align-items: center;
             justify-content: space-between;
+            flex-grow: 3;
+        }
+
+        @media (min-width: $desktop) {
+            flex-grow: 7;
         }
     }
-    @media (min-width: $desktop) {
+    @media (min-width: $tablet) {
         flex-direction: row;
         align-items: center;
         justify-content: center;

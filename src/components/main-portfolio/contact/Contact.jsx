@@ -9,7 +9,7 @@ export default function Contact() {
     };
     return (
         <div id="contact-me" className="section section__contact">
-            <div className="section__contact--left">
+            <div className="section__contact--item section__contact--left">
                 <div className="section__left--item img--container">
                     <img
                         className="left__item--img"
@@ -18,7 +18,7 @@ export default function Contact() {
                     ></img>
                 </div>
             </div>
-            <div className="section__contact--right">
+            <div className="section__contact--item section__contact--right">
                 {!thankYouMessage ? (
                     <div className="section__form">
                         <h2 className="right__item right__item--title">
@@ -28,13 +28,14 @@ export default function Contact() {
                             onSubmit={submitHandler}
                             className="right__item right__item--form"
                         >
-                            <input type="text" placeholder="email@email.com" />
+                            <input class="form__item" type="text" placeholder="email@email.com"/>
                             <textarea
-                                placeholder="Message"
+                            class="form__item" 
+                                placeholder="Doesn't work yet - Sorry!  Please email me instead!"
                                 cols="30"
                                 rows="10"
                             ></textarea>
-                            <button className="form--submit">Send</button>
+                            <button className="form__item form--submit">Send</button>
                         </form>
                     </div>
                 ) : (

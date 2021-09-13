@@ -13,24 +13,34 @@
         &::-webkit-scrollbar {
             display: none;
         }
-        > * {
-            width: 100vw;
-            // height: calc(100vh - #{$navBarHeight});
-            // scroll-snap-align: start
-        }
 
         .section {
             min-height: calc(100vh - #{$navBarHeight});
-            padding: 1em 0;
+            padding: 4em 2em;
+            position: relative; 
 
             .section__title {
                 padding-top: 0.5em;
             }
+            
         }
     }
 
     .offsetNavBar {
         margin-top: $navBarHeight;
+    }
+
+    .wrapper__link--container {
+        position: absolute;
+        bottom: 0;
+        margin: 0 auto;
+        margin-bottom: 0.5em;
+        width: calc(100% - 4em);
+    }
+
+    img {
+        display: block;
+        max-width: 100%;
     }
 }
 
