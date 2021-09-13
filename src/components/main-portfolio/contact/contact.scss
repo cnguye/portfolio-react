@@ -5,7 +5,7 @@
     display: flex;
     flex-direction: column;
     width: 100vw;
-    .section__left {
+    .section__contact--left {
         flex: 5;
         display: flex;
         align-items: center;
@@ -14,11 +14,10 @@
         .img--container {
             border-radius: 50%;
             background-color: $secondaryColor;
-            width: 70%;
+            width: 60%;
             display: flex;
             align-items: center;
             justify-content: center;
-            margin-top: 1.5em;
             .left__item--img {
                 max-width: 80%;
                 height: auto;
@@ -36,16 +35,15 @@
             z-index: 10;
             content: "";
             display: block;
-            width: 15em;
+            width: 12em;
             height: 2px;
             background: $secondaryColor;
             opacity: 0.25;
             bottom: 0;
+            margin-bottom: 20px;
         }
 
         @media (min-width: $tablet) {
-            padding: 1rem;
-
             &::after {
                 position: relative;
                 content: "";
@@ -59,14 +57,13 @@
             }
         }
     }
-    .section__right {
+    .section__contact--right {
         flex: 5;
         display: flex;
         justify-content: center;
         align-items: flex-start;
         .section__form {
             width: 80%;
-            height: 100%;
             display: flex;
             flex-direction: column;
             justify-content: center;

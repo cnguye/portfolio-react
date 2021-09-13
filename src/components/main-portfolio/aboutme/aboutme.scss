@@ -7,15 +7,16 @@
     align-items: center;
     position: relative;
 
-    // .section__title--services::after {
-    //     content: "";
-    //     display: block;
-    //     width: 2em;
-    //     height: 2px;
-    //     margin: 0.5em auto 1em;
-    //     background: $secondaryColor;
-    //     opacity: 0.25;
-    // }
+    .section__title--services::after {
+        content: "";
+        display: block;
+        width: 2em;
+        height: 2px;
+        // margin: 0.5em auto 0.25em;
+        margin: 0.25em auto 0;
+        background: $secondaryColor;
+        opacity: 0.25;
+    }
 
     .section-background-img {
         position: absolute;

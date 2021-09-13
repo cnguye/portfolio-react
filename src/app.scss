@@ -22,6 +22,10 @@
         .section {
             min-height: calc(100vh - #{$navBarHeight});
             padding: 1em 0;
+
+            .section__title {
+                padding-top: 0.5em;
+            }
         }
     }
 

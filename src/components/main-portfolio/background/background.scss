@@ -1,0 +1,10 @@
+@import "../../../global.scss";
+
+.section__background {
+    max-width: 1000px;
+    margin: 0 auto;
+
+    .section__subtitle--about {
+        font-weight: 300;
+    }
+}

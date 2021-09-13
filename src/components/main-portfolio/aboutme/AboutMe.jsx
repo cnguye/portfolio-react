@@ -12,7 +12,7 @@ export default function AboutMe() {
                 <div className="section-background-img"></div>
                 <div className="services">
                     <div className="service">
-                        <h3>Developer</h3>
+                        <h3>Develop</h3>
                         <p>
                             <strong>Front-end</strong> developing has been a
                             strong focus throughout my studies and career paths.
@@ -29,7 +29,7 @@ export default function AboutMe() {
                         </p>
                     </div>
                     <div className="service">
-                        <h3>Leader</h3>
+                        <h3>Lead</h3>
                         <p>
                             Growing up attending a Catholic youth group
                             community has taught me how to communicate,
@@ -45,7 +45,7 @@ export default function AboutMe() {
                         </p>
                     </div>
                     <div className="service">
-                        <h3>Producer</h3>
+                        <h3>Produce</h3>
                         <p>
                             I've been dancing to the beat of the drums since
                             2008. Electronic dance music has always been my
@@ -61,7 +61,7 @@ export default function AboutMe() {
                     </div>
                 </div>
 
-                <a href="#projects" className="wrapper--link">
+                <a href="#background" className="wrapper--link">
                     <ExpandMore className="wrapper--arrow" fontSize={"large"} />
                 </a>
             </div>

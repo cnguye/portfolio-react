@@ -25,6 +25,10 @@ function App() {
                 href: "about-me",
             },
             {
+                title: "Background",
+                href: "background",
+            },
+            {
                 title: "Projects",
                 href: "projects",
             },
@@ -90,7 +94,7 @@ function App() {
                     <Route exact path="/projects">
                         <ProjectsMain setNavMenu={setNavMenu} />
                     </Route>
-                    {/* <Contact /> */}
+                    <Contact />
                 </div>
             </div>
         </Router>

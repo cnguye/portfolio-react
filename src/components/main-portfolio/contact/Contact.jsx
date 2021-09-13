@@ -9,7 +9,7 @@ export default function Contact() {
     };
     return (
         <div id="contact-me" className="section section__contact">
-            <div className="section section__left">
+            <div className="section__contact--left">
                 <div className="section__left--item img--container">
                     <img
                         className="left__item--img"
@@ -18,7 +18,7 @@ export default function Contact() {
                     ></img>
                 </div>
             </div>
-            <div className="section section__right">
+            <div className="section__contact--right">
                 {!thankYouMessage ? (
                     <div className="section__form">
                         <h2 className="right__item right__item--title">
