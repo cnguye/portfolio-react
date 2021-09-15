@@ -1,12 +1,15 @@
 import React from "react";
 
+import { ExpandMore } from "@material-ui/icons";
 import "./background.scss";
 
 export default function Background() {
     return (
         <div id="background" className="section section__background">
             <div className="section__half section__first-half">
-                <h2 className="section__title section__title--about">Who I am</h2>
+                <h2 className="section__title section__title--about">
+                    Who I am
+                </h2>
                 <p className="section__subtitle section__subtitle--about">
                     Developer, Producer, and Leader
                 </p>
@@ -30,31 +33,55 @@ export default function Background() {
                 </div>
             </div>
             <div className="section__half section__second-half">
-            <section className="my-work" id="more-me">
-            <h2 className="section__title">Find out more about Me</h2>
-            <p className="section__subtitle"></p>
+                <div className="my-work" id="more-me">
+                    <h2 className="section__title">Find out more about Me</h2>
+                    <p className="section__subtitle"></p>
 
-            <div className="portfolio">
-                <a href="developer.html" className="portfolio__item">
-                    <div className="portfolio__item--container">
-                        <div className="portfolio__description">Projects</div>
-                        <img src="./img/some-code-on-a-laptop.jpg" alt="" className="portfolio__img" />
+                    <div className="portfolio">
+                        <a href="developer.html" className="portfolio__item">
+                            <div className="portfolio__item--container">
+                                <div className="portfolio__description">
+                                    Projects
+                                </div>
+                                <img
+                                    src="./img/some-code-on-a-laptop.jpg"
+                                    alt=""
+                                    className="portfolio__img"
+                                />
+                            </div>
+                        </a>
+                        <a href="producer.html" className="portfolio__item">
+                            <div className="portfolio__item--container">
+                                <div className="portfolio__description">
+                                    Music
+                                </div>
+                                <img
+                                    src="./img/flstudio-workspace.png"
+                                    alt=""
+                                    className="portfolio__img"
+                                />
+                            </div>
+                        </a>
+                        <a href="leader.html" className="portfolio__item">
+                            <div className="portfolio__item--container">
+                                <div className="portfolio__description">
+                                    Life
+                                </div>
+                                <img
+                                    src="./img/portfolio-ldrk.jpg"
+                                    alt=""
+                                    className="portfolio__img"
+                                />
+                            </div>
+                        </a>
                     </div>
-                </a>
-                <a href="producer.html" className="portfolio__item">
-                    <div className="portfolio__item--container">
-                        <div className="portfolio__description">Music</div>
-                        <img src="./img/flstudio-workspace.png" alt="" className="portfolio__img" />
-                    </div>
-                </a>
-                <a href="leader.html" className="portfolio__item">
-                    <div className="portfolio__item--container">
-                        <div className="portfolio__description">Life</div>
-                        <img src="./img/portfolio-ldrk.jpg" alt="" className="portfolio__img" />
-                    </div>
-                </a>
+                </div>
             </div>
-        </section>
+
+            <div className="wrapper__link--container">
+                <a href="#projects" className="right__wrapper--link">
+                    <ExpandMore className="wrapper--arrow" fontSize={"large"} />
+                </a>
             </div>
         </div>
     );

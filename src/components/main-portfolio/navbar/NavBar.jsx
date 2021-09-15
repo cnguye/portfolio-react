@@ -37,10 +37,7 @@ function NavBar({
                 <div className="nav__left">
                     <div className="logo--img">
                         <a href="/">
-                            <img
-                                src="img/ceen-square.png"
-                                alt="ceen"
-                            />
+                            <img src="img/ceen-square.png" alt="ceen" />
                         </a>
                     </div>
                     <a
@@ -59,10 +56,11 @@ function NavBar({
                             </span>
                         </div>
                         <div className="itemContainer__items">
-                            <Mail className="itemContainer--item itemContainer--icon" />
-                            <span className="itemContainer--item itemContainer--text">
+                            <a href="mailto:ngyn.christopher@gmail.com" className="itemContainer__email">
+                                <Mail className="itemContainer--item itemContainer--icon" />
                                 ngyn.christopher@gmail.com
-                            </span>
+                                <span className="itemContainer--item itemContainer--text"></span>
+                            </a>
                         </div>
                     </div>
                 </div>

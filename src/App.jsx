@@ -6,7 +6,7 @@ import ScrollToTop from "./components/ScrollToTop";
 import PortfolioMain from "./components/main-portfolio/portfolioMain/PortfolioMain";
 import ProjectsMain from "./components/projects/ProjectsMain";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 import "./app.scss";
 
@@ -65,7 +65,6 @@ function App() {
                 return menuItems.home;
         }
     });
-
     return (
         <Router>
             <div className="app">

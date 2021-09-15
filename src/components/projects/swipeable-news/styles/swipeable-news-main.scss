@@ -1,0 +1,202 @@
+@import '../../../../global.scss';
+
+.swipeable-news {
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+    text-align: center;
+    font-size: var(--fs-h3);
+    align-items: center;
+}
+
+.swipeable-news-logo {
+    height: 40vmin;
+    pointer-events: none;
+}
+
+.swipeable-news-container {
+    min-height: 100%;
+    width: 100%;
+    flex: 1;
+}
+
+.swipeable-news-main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: auto;
+    padding-bottom: 100px;
+    padding-top: 55px;
+    color: $mainColor;
+    text-align: center;
+}
+
+button {
+    border: none;
+    background: var(--clr-accent);
+}
+
+button:hover {
+    cursor: pointer;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    .swipeable-news-logo {
+        animation: swipeable-news-logo-spin infinite 20s linear;
+    }
+}
+
+// Social Cards Body
+
+@media (min-width: 800px) {
+    .SocialCards-body {
+        display: flex;
+        justify-content: center;
+
+        flex-wrap: wrap;
+        width: 100%;
+    }
+}
+
+// Social Card Selector
+.category-selector__body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    user-select: none;
+    width: 100vw;
+}
+
+.category-selector__section {
+    font-size: 1rem;
+    margin: 1px;
+}
+
+.category-selector--select-body {
+    position: relative;
+    border: 2px solid $mainColor;
+    border-radius: 5px;
+    display: flex;
+    height: 30px;
+    margin-top: 3px;
+    align-items: center;
+
+    .category-selector--select {
+        background-image: none;
+        margin: 0 5px;
+        position: relative;
+        display: flex;
+        align-items: center;
+
+        select {
+            cursor: pointer;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            -ms-appearance: none;
+            appearance: none;
+            box-shadow: none;
+            border: none;
+            outline: none;
+            width: 8rem;
+            font-size: 1rem;
+        }
+
+        &:after {
+            content: '\25BC';
+            position: absolute;
+            right: 0;
+            font-size: 0.8rem;
+            background: $mainColor;
+            color: $secondaryColor;
+            pointer-events: none;
+            padding: 1px 2px;
+        }
+    }
+
+    .category-selector__add-selected-category-btn {
+        background: $mainColor;
+        color: $secondaryColor;
+        padding: 5px;
+
+        &:hover {
+            cursor: pointer;
+            background: var(--clr-dark);
+            color: var(--clr-light);
+        }
+    }
+}
+
+.category-selector__current-selected--list-body {
+    display: flex;
+    max-width: 70%;
+    justify-content: center;
+    color: black;
+}
+
+.category-selector__current-selected--list {
+    list-style-type: none;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+
+    .selected-category--item {
+        display: flex;
+        text-align: center;
+        line-height: 1rem;
+        border: 2px solid $mainColor;
+        border-radius: 5px;
+        background: $secondaryColor;
+        margin: 1px;
+
+        .selected-category__name {
+            padding: 3px 7px 5px;
+        }
+        .selected-category__delete-item-btn {
+            border: none;
+            background: $mainColor;
+            padding: 0 10px;
+
+            &:hover {
+                cursor: pointer;
+                background: var(--clr-dark);
+                color: var(--clr-light);
+            }
+        }
+    }
+    .selected-category--item + .selected-category--item {
+        margin-left: 10px;
+    }
+}
+
+.swipeable-news-credits {
+    width: 100%;
+    text-align: center;
+}
+
+@media (min-width: 800px) {
+    .category-selector__body {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        user-select: none;
+        width: 40vw;
+        justify-content: space-evenly;
+    }
+
+    .category-selector__section {
+        align-self: start;
+        font-size: 1rem;
+        margin: 0;
+    }
+
+    .category-selector__current-selected--list {
+        justify-content: flex-end;
+    }
+}
+
+.active-news {
+    border: 2px solid var(--clr-dark) !important;
+}

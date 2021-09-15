@@ -28,9 +28,9 @@ export default function Contact() {
                             onSubmit={submitHandler}
                             className="right__item right__item--form"
                         >
-                            <input class="form__item" type="text" placeholder="email@email.com"/>
+                            <input className="form__item" type="text" placeholder="email@email.com"/>
                             <textarea
-                            class="form__item" 
+                            className="form__item" 
                                 placeholder="Doesn't work yet - Sorry!  Please email me instead!"
                                 cols="30"
                                 rows="10"

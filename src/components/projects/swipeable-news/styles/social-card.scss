@@ -1,0 +1,310 @@
+@import '../../../../global.scss';
+
+.social-cards--body {
+    margin: 15px 10px 0px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: black;
+    padding: 10px;
+    background: rgba($mainColor, 0.75);
+    border-radius: 15px;
+
+}
+
+@media (min-width: 800px) {
+    .social-cards--body {
+        width: 400px;
+    }
+}
+
+@keyframes fadeIn {
+    0% {
+        left: 100;
+    }
+    100% {
+        left: 1;
+    }
+}
+
+.app-title__body {
+    padding: 2rem 0;
+
+    .app-title {
+        margin: 0;
+        padding: 0;
+    }
+
+    .app-sub-title {
+        margin: 0;
+        padding: 0;
+    }
+}
+
+.app-credits {
+    font-size: 1rem;
+    font-style: italic;
+    padding: 1rem;
+}
+
+.SocialCard__body {
+    position: relative;
+    margin-top: 25px;
+    min-height: 20px;
+}
+
+.SocialCard__body + .SocialCard__body {
+    margin-top: 10px;
+}
+
+.Wrapper__body {
+    position: relative;
+}
+
+.Wrapper {
+    position: relative;
+    transition: opacity 0.25s ease-out, height 0.5s ease-out 0.2s;
+    width: 100%;
+    height: 200px;
+    display: block;
+    user-select: none;
+    color: var(--clr-light);
+}
+
+.WrapperOut {
+    height: 0;
+    opacity: 0;
+}
+
+.Background {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    padding-right: 16px;
+    color: black;
+    background-color: rgba(255, 89, 89, 1);
+    box-sizing: border-box;
+    border-radius: 11px;
+}
+
+.UndoSwipe {
+    background-color: var(--clr-accent);
+    font-size: 1rem;
+    text-align: right;
+    padding: 3px 10px;
+    z-index: -2;
+    width: 100%;
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    position: absolute;
+    top: 0;
+    transition: opacity 1s;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-style: italic;
+
+    .Preview__text {
+        font-size: 0.8rem;
+
+        padding-right: 1rem;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+    }
+}
+
+.UndoSwiped__text {
+    border-left: 2px solid var(--clr-dark);
+    padding-left: 0.5rem;
+}
+
+.UndoSwiped__text:hover {
+    cursor: pointer;
+    color: var(--clr-light);
+}
+
+.BouncingSwipableListItem {
+    transition: all 0.5s ease-out;
+    width: 100%;
+    align-items: center;
+    box-sizing: border-box;
+    height: 100%;
+    background: var(--clr-dark);
+    border-radius: 10px;
+
+    display: grid;
+    grid-template-columns: 40% 1fr;
+    grid-template-rows: 30% 1fr;
+    grid-template-areas:
+        'img header'
+        'img description';
+    column-gap: 10px;
+    row-gap: 5px;
+    overflow: hidden;
+}
+
+.SwipableListItem {
+    width: 100%;
+    align-items: center;
+    box-sizing: border-box;
+    height: 100%;
+    background: var(--clr-dark);
+    border-radius: 10px;
+    transition: background-color 0.5s ease;
+
+    display: grid;
+    grid-template-columns: 40% 1fr;
+    grid-template-rows: 30% 1fr;
+    grid-template-areas:
+        'img header'
+        'img description';
+    column-gap: 10px;
+    row-gap: 5px;
+    overflow: hidden;
+}
+
+.social-cards--title {
+    text-transform: capitalize;
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: $secondaryColor;
+}
+
+.SocialCard-section {
+    display: flex;
+    text-align: left;
+}
+
+// Social Card Header
+.SocialCard-section__header-body {
+    grid-area: header;
+    align-self: start;
+            font-size: 1rem;
+    margin-top: 10px;
+
+    .SocialCard-section__header-icon {
+        height: 50px;
+        width: 50px;
+        background: $mainColor;
+        position: relative;
+        .SocialCard-section__header-icon--img {
+            position: absolute;
+            max-width: 70%;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+    }
+
+    .SocialCard-section__header-text {
+        margin-left: 0.5rem;
+        .SocialCard-section__header-text--source {
+            font-weight: bold;
+        }
+        .SocialCard-section__header-text--publish-date {
+            font-size: 0.8rem;
+        }
+    }
+}
+
+@media (min-width: 800px) {
+    .SocialCard-section__header-text--source {
+        font-size: 1.2rem;
+    }
+}
+
+// Social Card Image
+.SocialCard-section__img-body {
+    grid-area: img;
+    height: 100%;
+
+    .SocialCard-section__img-body--img-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        backdrop-filter: blur(3px);
+        overflow: hidden;
+        height: 100%;
+        width: 100%;
+
+        text-decoration: none;
+
+        .SocialCard-section__img-body--img {
+            width: 120%;
+            height: auto;
+            text-align: center;
+            color: var(--clr-accent);
+        }
+
+        .SocialCard-section__img-body--img:hover {
+            cursor: pointer;
+            color: var(--clr-light);
+        }
+    }
+}
+
+// Social card Text
+.SocialCard-section__text-body {
+    flex-direction: column;
+    grid-area: description;
+    align-self: start;
+    margin-top: 2px;
+    padding-right: 15px;
+
+    .SocialCard-section__text-body--title {
+        font-weight: bold;
+        font-size: 1rem;
+
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+
+        a {
+            color: var(--clr-light);
+        }
+        &:hover,
+        a:hover {
+            color: var(--clr-accent);
+        }
+    }
+
+    .SocialCard-section__text-body--title:hover {
+        cursor: pointer;
+        text-decoration: underline;
+    }
+
+    .SocialCard-section__text-body--author {
+        font-size: 0.7rem;
+        font-style: italic;
+    }
+
+    .SocialCard-section__text-body--description {
+        font-size: 0.7em;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
+    }
+}
+
+.SwipableListItem.warning {
+    background: rgb(255, 150, 150);
+    color: var(--clr-light);
+}
+
+// Deleted
+.SocialCard-section__delete-body {
+    background: orange;
+}

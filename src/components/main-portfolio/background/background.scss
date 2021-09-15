@@ -4,6 +4,8 @@
     align-items: flex-start;
     max-width: 1200px;
     margin: 0 auto;
+    position: relative;
+    color: $mainColor;
 
     .section__half {
         display: block;
@@ -22,6 +24,9 @@
             margin-bottom: 10px;
             font-weight: 400;
             display: inline-block;
+        }
+        .background__body {
+            color: black;
         }
         .background__img {
             float: right;
@@ -62,6 +67,7 @@
     }
 
     .section__second-half {
+        padding-top: 8em;
         clear: right;
         .section__title {
             text-align: center;
@@ -83,14 +89,14 @@
 
                     .portfolio__description {
                         position: absolute;
-                        width: 150px;
-                        height: 150px;
+                        width: 200px;
+                        height: 200px;
                         background-color: rgba($mainColor, 0.7);
                         left: 50%;
                         top: 50%;
                         transform: translate(-50%, -50%);
                         text-align: center;
-                        line-height: 150px;
+                        line-height: 200px;
                         color: $secondaryColor;
                     }
 

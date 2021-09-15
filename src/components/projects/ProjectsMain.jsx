@@ -1,6 +1,8 @@
 import React from "react";
 import Todo from "./todo/TodoMain";
 import Calculator from "./calculator/Calculator";
+import SwipeableNews from "./swipeable-news/Swipeable-NewsMain";
+
 import { Link, useLocation } from "react-router-dom";
 import { Card } from "@material-ui/core";
 
@@ -14,14 +16,22 @@ export default function ProjectsMain({ setNavMenu }) {
 
     return (
         <div id="projects" className="projects">
-            <div className="project__item">
-                <Card>
-                    <Todo />
-                </Card>
+            <div className="project__items">
+                <div className="project__item">
+                    <Card>
+                        <Todo />
+                    </Card>
+                </div>
+                <div className="project__item" style={displayNone}>
+                    <Calculator />
+                </div>
+                <div className="project__item">
+                    <Card>
+                        <SwipeableNews />
+                    </Card>
+                </div>
             </div>
-            <div className="project__item" style={displayNone}>
-                <Calculator />
-            </div>
+            {/* Link to Home */}
             {useLocation().pathname === "/projects" && (
                 <div className="projects__link">
                     <Link to="/" className="projects__Link">
