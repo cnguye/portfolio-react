@@ -7,8 +7,8 @@ import Background from "../background/Background";
 export default function PortfolioMain({ setNavMenu }) {
     return (
         <React.Fragment>
-            <Intro />
-            <AboutMe />
+            {/* <Intro />
+            <AboutMe /> */}
             <Background />
             <Projects />
         </React.Fragment>

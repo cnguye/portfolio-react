@@ -1,0 +1,71 @@
+@import "../../../global.scss";
+
+.my-work {
+    position: relative;
+    .portfolio {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        max-width: 70%;
+        margin: 1em auto 0;
+        .portfolio__item {
+            background: $secondaryColor;
+            .portfolio__item--img {
+                overflow: hidden;
+                .keep-expanded {
+                    transform: scale(1.2);
+                    opacity: 0.7;
+                }
+                .portfolio__item--container {
+                    position: relative;
+
+                    .portfolio__description {
+                        position: absolute;
+                        width: 200px;
+                        height: 200px;
+                        background-color: rgba($mainColor, 0.7);
+                        left: 50%;
+                        top: 50%;
+                        transform: translate(-50%, -50%);
+                        text-align: center;
+                        line-height: 200px;
+                        color: $secondaryColor;
+
+                        -webkit-touch-callout: none; /* iOS Safari */
+                        -webkit-user-select: none; /* Safari */
+                        -khtml-user-select: none; /* Konqueror HTML */
+                        -moz-user-select: none; /* Old versions of Firefox */
+                        -ms-user-select: none; /* Internet Explorer/Edge */
+                        user-select: none; /* Non-prefixed version, currently supported by Chrome, Edge, Opera and Firefox */
+                    }
+                }
+                &:hover {
+                    cursor: pointer;
+                }
+                &:focus {
+                    position: relative;
+                    z-index: 2;
+                }
+            }
+        }
+        .portfolio--collapse {
+            bottom: 0;
+
+            .more-me__description {
+                padding: 1em;
+                margin-bottom: 1em;
+                color: black;
+            }
+            @media (min-width: $tablet) {
+                position: absolute;
+                background-color: $secondaryColor;
+                border: 2px solid $mainColor;
+                z-index: 100;
+                width: 100%;
+            }
+        }
+
+        @media (min-width: $tablet) {
+            max-width: 100%;
+        }
+    }
+}

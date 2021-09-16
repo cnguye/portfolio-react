@@ -89,7 +89,7 @@ export default function SwipeableNews() {
                 </div>
             </div>
             <div className="swipeable-news-credits">
-                News provided by <a href="https://newsapi.org/" target="__blank">NewsAPI</a>
+                News provided by <a href="https://newsapi.org/" target="__blank" rel="noopener noreferrer">NewsAPI</a>
             </div>
         </div>
     );
