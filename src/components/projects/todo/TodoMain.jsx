@@ -40,14 +40,31 @@ export default function Todo() {
 
     // Save to local
     const saveLocalTodos = () => {
+        console.log("Hello savelocal");
         localStorage.setItem("todos", JSON.stringify(todos));
     };
 
     const getLocalTodos = () => {
         if (localStorage.getItem("todos") === null) {
-            localStorage.setItem("todos", JSON.stringify([]));
+            // fill with sample todo list
+            const exampleToDo = [
+                {
+                    text: 'pick up milk',
+                    completed: true,
+                    id: Math.random() * 1000,
+                },
+                {
+                    text: 'walk the dog',
+                    completed: false,
+                    id: Math.random() * 1000,
+                }
+            ];
+            setTodos(exampleToDo);
+            localStorage.setItem("todos", JSON.stringify(todos));
+            setInputText('order dinner');
         } else {
             let localTodos = JSON.parse(localStorage.getItem("todos"));
+            console.log(localTodos);
             setTodos(localTodos);
         }
     };

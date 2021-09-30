@@ -1,7 +1,6 @@
 @import "../../../global.scss";
 
 .project__body--todo {
-    background-color: $secondaryColor;
     color: $mainColor;
     min-height: 400px;
     display: flex;
@@ -12,49 +11,23 @@
     font-size: 2rem;
 }
 
-.project__header,
-.project__form{
+.project__header {
     display: flex;
-    // justify-content: center;
     align-items: center;
     padding: 0 1em;
 }
+
 .project__form .todo--input,
-.project__form button {
+.todo-button {
     padding: 0.5rem;
     font-size: 2rem;
     border: none;
-    background: $mainColorLite;
-}
-
-.project__form--input { 
-    display: flex;
-}
-
-.project__form button {
-    color: $secondaryColor;
-    background: $mainColor;
-    cursor: pointer;
-    transition: all 0.3s ease;
-}
-.project__form button:hover {
     background: $secondaryColor;
-    color: white;
-}
-
-@media (max-width: $tablet) {
-    .todo--input {
-        width: 200px;
-    }
-    .form__select {
-        // max-width: 65%;
-    }
 }
 
 .todo__container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    padding: 0 1rem;
+    width: 100%;
 }
 
 .todo__list {
@@ -63,15 +36,19 @@
     margin-bottom: 1em;
 
     overflow: scroll;
-    max-height: 250px;
-    scrollbar-width: none;
-    &::-webkit-scrollbar {
-        display: none;
-    }
+    overflow-x: hidden;
+    overflow-y: auto;
+    max-height: 550px;
+    // scrollbar-width: none;
+    // &::-webkit-scrollbar {
+    //     display: none;
+    // }
+    width: 100%;
+    padding: 0;
 }
 
 .todo {
-    margin: 0.5rem;
+    margin-top: 1rem;
     background: $mainColorLite;
     font-size: 1.5rem;
     color: black;
@@ -83,7 +60,8 @@
 
 .filter-todo {
     padding: 1rem;
-    background-color: $mainColorLite;
+    background-color: $secondaryColor;
+    color: black;
 }
 .todo li {
     flex: 1;
@@ -105,29 +83,79 @@
     opacity: 0.5;
 }
 
+.project__form--todo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 0 1rem;
+
+    .project__form--item + .project__form--item {
+        margin-left: 1rem;
+    }
+}
+
+.project__form--input {
+    flex: 2;
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    .todo--input {
+        border: 2px solid $mainColor;
+        width: 100%;
+    }
+}
+
+.todo-button {
+    color: $secondaryColor;
+    background: $mainColorLite;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+.todo-button:hover {
+    background: $mainColor;
+    color: $secondaryColor;
+}
+
+@media (max-width: $desktop) {
+    .project__form--todo {
+        flex-direction: column;
+
+        .project__form--item {
+            margin: 0.5rem 0;
+            + .project__form--item {
+                margin-left: 0;
+            }
+        }
+        .project__form--select{
+            width: 100%;
+           
+        }
+    }
+}
+
 /*CUSTOM SELECTOR */
 .project__form--select {
+    background-color: lightblue;
     -webkit-appearance: none;
     -moz-appearance: none;
     -ms-appearance: none;
     appearance: none;
     outline: 0;
     box-shadow: none;
-    border: 0 !important;
     background-image: none;
+    flex: 1;
 }
 
 /* Custom Select */
 .form__select {
-    margin-left: 1rem;
     position: relative;
     overflow: hidden;
-}
-.form__select {
-    color: $secondaryColor;
+    color: $mainColor;
     font-family: "Poppins", sans-serif;
     cursor: pointer;
-    width: 12rem;
+    width: 100%;
+    border: 2px solid $mainColor;
 }
 /* Arrow */
 .form__select::after {

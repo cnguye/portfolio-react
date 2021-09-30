@@ -21,7 +21,7 @@ export default function Contact() {
             <div className="section__contact--item section__contact--right">
                 {!thankYouMessage ? (
                     <div className="section__form">
-                        <h2 className="right__item right__item--title">
+                        <h2 className="section__title right__item right__item--title">
                             Contact.
                         </h2>
                         <form

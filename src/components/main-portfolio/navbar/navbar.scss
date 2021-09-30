@@ -5,7 +5,6 @@
     height: 120px;
     position: fixed;
     top: 0;
-    z-index: 2;
     background: linear-gradient(to right, white 34%, #{$mainColor} 65%);
     background-size: 300% 100%;
     background-position: left bottom;
@@ -38,9 +37,6 @@
                 font-weight: 400;
                 text-decoration: none;
                 margin-right: 15px;
-
-                color: $mainColor;
-                text-decoration: none;
                 background-clip: text;
                 -webkit-background-clip: text;
                 -webkit-text-fill-color: transparent;
@@ -80,13 +76,17 @@
                         margin-left: 1em;
                         display: flex;
                         align-items: center;
-                        color: $mainColor;
                         text-decoration: none;
+                        color: $mainColor;
+                        transition: all 200ms ease;
                         .itemContainer--item + .itemContainer--item {
                             margin-right: 10px;
                         }
                         .itemContainer--text {
                             margin-left: 5px;
+                        }
+                        &.active {
+                            color: $secondaryColor;
                         }
                     }
                 }

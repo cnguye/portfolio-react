@@ -47,7 +47,7 @@ export default function Form({
                     <Add />
                 </button>
             </div>
-            <div className="project__form--item  project__form--select">
+            <div className="project__form--item project__form--select">
                 <select
                     onChange={statusHandler}
                     name="todos"

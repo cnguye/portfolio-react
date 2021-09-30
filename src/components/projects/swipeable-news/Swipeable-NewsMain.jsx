@@ -23,14 +23,12 @@ export default function SwipeableNews() {
             let country = "us";
             let category = "general";
             let pagesize = 3;
-
             fetch(
-                `http://localhost:5000/projects?country=${country}&category=${category}&pagesize=${pagesize}`, {
+                `http://localhost:5000/api/projects?country=${country}&category=${category}&pagesize=${pagesize}`, {
                     headers : { 
                       'Content-Type': 'application/json',
                       'Accept': 'application/json'
                      }
-              
                   }
             )
                 .then((data) => data.json())
@@ -49,7 +47,7 @@ export default function SwipeableNews() {
                         ...categoryHeadlines,
                         headlineData,
                     ]);
-                });
+                }).catch(error => console.log(error.message));
             return;
         }
         setCurrCategoryHeadlines(

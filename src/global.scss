@@ -1,5 +1,5 @@
 $mainColor: rgb(0, 182, 206);
-$mainColorLite: rgb(108, 220, 235);
+$mainColorLite: rgb(57, 232, 255);
 $mainColorSplitComp: #ce3a00;
 
 $secondaryColor: rgb(255, 254, 245);
@@ -12,6 +12,8 @@ $click-active-light: rgb(255, 254, 245);
 
 $media800NavBarHeight: 120px;
 $navBarHeight: 120px;
+
+$viewHeight: calc(100vh - #{$navBarHeight});
 
 // media queries and breakpoints
 $mobile: 375px; // iPhone X 375 x 812

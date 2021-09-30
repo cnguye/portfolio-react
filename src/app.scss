@@ -4,7 +4,7 @@
     .sections {
         overflow-x: hidden;
         width: 100%;
-        height: calc(100vh - #{$navBarHeight});
+        height: $viewHeight;
         position: relative;
         // scrollbar functionality
         scroll-behavior: smooth;
@@ -15,14 +15,17 @@
         }
 
         .section {
-            min-height: calc(100vh - #{$navBarHeight});
-            padding: 4em 2em;
-            position: relative; 
+            min-height: $viewHeight;
+            padding: 4em 2rem;
+            position: relative;
 
             .section__title {
                 padding-top: 0.5em;
             }
-            
+
+            @media (min-width: $desktop) {
+                padding: 4em 10rem;
+            }
         }
     }
 

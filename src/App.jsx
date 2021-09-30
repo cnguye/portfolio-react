@@ -4,7 +4,7 @@ import Contact from "./components/main-portfolio/contact/Contact";
 import ScrollToTop from "./components/ScrollToTop";
 
 import PortfolioMain from "./components/main-portfolio/portfolioMain/PortfolioMain";
-import ProjectsMain from "./components/projects/ProjectsMain";
+import ProjectsDesc from "./components/projects/ProjectsDesc";
 
 import { useState } from "react";
 
@@ -54,6 +54,10 @@ function App() {
     };
     const [menuOpen, setMenuOpen] = useState(false);
 
+    const [activeProject, setActiveProject] = useState("todo");
+    const [projectDescHovered, setProjectDescHovered] = useState(false);
+    const [projectClicked, setProjectClicked] = useState(true);
+
     // is this bad practice...?
     const [navMenu, setNavMenu] = useState(() => {
         switch (window.location.pathname) {
@@ -74,6 +78,7 @@ function App() {
                     navMenu={navMenu}
                     setNavMenu={setNavMenu}
                     menuItems={menuItems}
+                    setActiveProject={setActiveProject}
                 />
                 <NavMenu
                     navMenu={navMenu}
@@ -82,18 +87,25 @@ function App() {
                 />
                 <div
                     id="sections"
-                    className={"sections " + (!menuOpen && "offsetNavBar")}
+                    className={"sections offsetNavBar"}
+                    // className={"sections " + (!menuOpen && "offsetNavBar")}
                     onClick={() => setMenuOpen(false)}
                 >
                     <ScrollToTop />
                     <Route exact path="/">
-                        <PortfolioMain setNavMenu={setNavMenu} />
+                        <PortfolioMain
+                            setNavMenu={setNavMenu}
+                            activeProject={activeProject}
+                            setActiveProject={setActiveProject}
+                            projectDescHovered={projectDescHovered}
+                            setProjectDescHovered={setProjectDescHovered}
+                            projectClicked={projectClicked}
+                            setProjectClicked={setProjectClicked}
+                            setMenuOpen={setMenuOpen}
+                            menuOpen={menuOpen}
+                        />
                     </Route>
-
-                    <Route exact path="/projects">
-                        <ProjectsMain setNavMenu={setNavMenu} />
-                    </Route>
-                    <Contact />
+                    {/* <Contact /> */}
                 </div>
             </div>
         </Router>

@@ -3,7 +3,6 @@
 .section__contact {
     background-color: $mainColor;
     display: flex;
-    flex-direction: column;
     width: 100vw;
 
     .section__contact--item {
@@ -124,11 +123,11 @@
             flex-direction: row;
             align-items: center;
             justify-content: space-between;
-            flex-grow: 3;
         }
 
         @media (min-width: $desktop) {
-            flex-grow: 7;
+            // flex-grow: 7;
+            width: 60%;
         }
     }
     @media (min-width: $tablet) {

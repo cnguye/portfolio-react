@@ -10,6 +10,7 @@ function NavBar({
     navMenu,
     setNavMenu,
     menuItems,
+    setActiveProject,
 }) {
     const [logoText, setLogoText] = useState("christopher nguyen.");
     const logoTextHandler = () => {
@@ -30,6 +31,11 @@ function NavBar({
             }
         });
     }, [history, menuItems, setNavMenu]);
+
+    const handleMenuOpen = () => {
+        setMenuOpen(!menuOpen);
+        setActiveProject("");
+    };
 
     return (
         <div className={"nav " + (menuOpen && "active")}>
@@ -56,7 +62,13 @@ function NavBar({
                             </span>
                         </div>
                         <div className="itemContainer__items">
-                            <a href="mailto:ngyn.christopher@gmail.com" className="itemContainer__email">
+                            <a
+                                href="mailto:ngyn.christopher@gmail.com"
+                                className={
+                                    `itemContainer__email ` +
+                                    (menuOpen && "active")
+                                }
+                            >
                                 <Mail className="itemContainer--item itemContainer--icon" />
                                 ngyn.christopher@gmail.com
                                 <span className="itemContainer--item itemContainer--text"></span>
@@ -65,7 +77,7 @@ function NavBar({
                     </div>
                 </div>
                 <button
-                    onClick={() => setMenuOpen(!menuOpen)}
+                    onClick={handleMenuOpen}
                     className="nav__right "
                 >
                     <span className="hamburger"></span>
