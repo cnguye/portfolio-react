@@ -6,8 +6,6 @@
     align-items: center;
     position: relative;
     .section__title--projects {
-        margin-bottom: 1rem;
-
         @media (min-width: $tablet) {
         }
     }
@@ -22,22 +20,30 @@
             border-radius: 5px;
 
             .project__title {
-                margin-top: 1em;
+                display: none;
+            }
+
+            .project__langs {
+                margin-top: 0.5rem;
+                font-size: 2rem;
+                .project__lang + .project__lang {
+                    margin-left: 2rem;
+                }
             }
         }
-
     }
 
     @media (min-width: $desktop) {
         align-items: flex-end;
         .section__title--projects {
+            margin-bottom: 1rem;
             align-self: flex-start;
             overflow: hidden;
         }
         .projects {
             width: 100%;
             transition: all 800ms ease;
-            
+
             &:after {
                 content: "";
                 position: absolute;
@@ -78,10 +84,15 @@
                     transition: all 300ms ease;
                 }
 
-                &:hover:after {
-
+                &:hover:after,
+                &.selected:after {
                     background: $mainColor;
                     height: 95%;
+                }
+
+                &.selected:after {
+                    width: 4px;
+                    box-shadow: 0px 0px 5px 2px $mainColorLite;
                 }
 
                 &:hover {
@@ -105,8 +116,13 @@
                     }
                 }
 
+                &:hover,
+                &.selected {
+                    background: $mainColorLite;
+                    transform: translateX(-30px);
+                }
+
                 &.extend {
-                    // transform: translateX(-250px);
                     right: 0;
                 }
 
@@ -117,24 +133,24 @@
                     margin: 0;
                 }
                 .project__title {
+                    display: block;
+                    margin-top: 1em;
                     grid-area: title;
                     font-size: 3rem;
                     margin: 0;
                 }
                 .project__langs {
+                    margin: 0;
                     grid-area: langs;
                     .project__lang {
                         font-size: 3rem;
-                    transition: all 700ms ease;
-
+                        transition: all 700ms ease;
                     }
                     .project__lang + .project__lang {
                         margin-left: 2rem;
                     }
                 }
             }
-
-            
         }
     }
 }

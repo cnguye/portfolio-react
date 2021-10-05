@@ -67,6 +67,7 @@
             }
             .itemContainer__body {
                 margin-top: 1em;
+                font-size: .8rem;
                 display: flex;
                 .itemContainer__items {
                     display: flex;
@@ -89,6 +90,9 @@
                             color: $secondaryColor;
                         }
                     }
+                }
+                @media (min-width: $tablet){
+                    font-size: 1rem;
                 }
             }
         }

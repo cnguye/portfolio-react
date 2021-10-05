@@ -4,7 +4,6 @@ import Contact from "./components/main-portfolio/contact/Contact";
 import ScrollToTop from "./components/ScrollToTop";
 
 import PortfolioMain from "./components/main-portfolio/portfolioMain/PortfolioMain";
-import ProjectsDesc from "./components/projects/ProjectsDesc";
 
 import { useState } from "react";
 
@@ -54,7 +53,7 @@ function App() {
     };
     const [menuOpen, setMenuOpen] = useState(false);
 
-    const [activeProject, setActiveProject] = useState("todo");
+    const [activeProject, setActiveProject] = useState("");
     const [projectDescHovered, setProjectDescHovered] = useState(false);
     const [projectClicked, setProjectClicked] = useState(true);
 
@@ -105,7 +104,7 @@ function App() {
                             menuOpen={menuOpen}
                         />
                     </Route>
-                    {/* <Contact /> */}
+                    <Contact />
                 </div>
             </div>
         </Router>

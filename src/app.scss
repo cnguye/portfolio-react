@@ -16,15 +16,17 @@
 
         .section {
             min-height: $viewHeight;
-            padding: 4em 2rem;
+            padding: 0.5rem 0.5rem 0 0.5rem;
             position: relative;
 
             .section__title {
                 padding-top: 0.5em;
+                font-size: 2rem;
             }
 
             @media (min-width: $desktop) {
                 padding: 4em 10rem;
+                font-size: auto;
             }
         }
     }
@@ -36,9 +38,11 @@
     .wrapper__link--container {
         position: absolute;
         bottom: 0;
+        left: 0;
+        right: 0;
         margin: 0 auto;
         margin-bottom: 0.5em;
-        width: calc(100% - 4em);
+        width: 100%;
         text-align: center;
     }
 

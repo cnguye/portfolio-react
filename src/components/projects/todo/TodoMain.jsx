@@ -28,22 +28,12 @@ export default function Todo() {
         }
     };
 
-    useEffect(() => {
-        getLocalTodos();
-    }, []);
-
-    useEffect(() => {
-        filterHandler();
-        saveLocalTodos();
-        // eslint-disable-next-line
-    }, [todos, filter]);
-
     // Save to local
     const saveLocalTodos = () => {
-        console.log("Hello savelocal");
         localStorage.setItem("todos", JSON.stringify(todos));
     };
 
+    // eslint-disable-next-line 
     const getLocalTodos = () => {
         if (localStorage.getItem("todos") === null) {
             // fill with sample todo list
@@ -64,10 +54,20 @@ export default function Todo() {
             setInputText('order dinner');
         } else {
             let localTodos = JSON.parse(localStorage.getItem("todos"));
-            console.log(localTodos);
             setTodos(localTodos);
         }
     };
+
+    useEffect(() => {
+        getLocalTodos();
+    // eslint-disable-next-line 
+    }, []);
+
+    useEffect(() => {
+        filterHandler();
+        saveLocalTodos();
+        // eslint-disable-next-line
+    }, [todos, filter]);
 
     return (
         <div id="todo" className="project__body project__body--todo">

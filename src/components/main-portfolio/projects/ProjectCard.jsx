@@ -19,15 +19,16 @@ export default function ProjectCard({
         e.stopPropagation();
         if (activeProject === projectKey) setActiveProject("");
         else setActiveProject(projectKey);
-        if(menuOpen)
-            setMenuOpen(!menuOpen);
+        if (menuOpen) setMenuOpen(!menuOpen);
         setProjectClicked(true);
         setProjectDescHovered(false);
     };
 
     return (
         <div
-            className={`project__item ${activeProject !== "" ? "extend" : ""}`}
+            className={`project__item ${activeProject !== "" ? "extend" : ""} ${
+                activeProject === projectKey ? "selected" : ""
+            }`}
             onClick={handleOpenProject}
             onMouseEnter={
                 !projectClicked ? () => setProjectDescHovered(true) : null

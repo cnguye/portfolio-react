@@ -20,6 +20,10 @@ $mobile: 375px; // iPhone X 375 x 812
 $tablet: 768px; // iPad 768 x 1024
 $desktop: 1024px;
 
+$submit: green;
+$warning: orange;
+$danger: red;
+
 @mixin for_breakpoint($breakpoints) {
     $conditions: ();
     @each $breakpoint in $breakpoints {
@@ -76,7 +80,28 @@ $desktop: 1024px;
     pointer-events: none;
 }
 
-// shake animation
+// FontAwesome icons
+.project__lang {
+    transition: all 500ms ease;
+}
+
+.project__lang--react:hover {
+    color: rgb(0, 140, 255);
+}
+
+.project__lang--js:hover {
+    color: rgb(255, 251, 0);
+}
+
+.project__lang--sass:hover {
+    color: rgb(255, 79, 108);
+}
+
+.project__lang--html5:hover {
+    color: red;
+}
+
+// animations
 @keyframes shake {
     0% {
         transform: translate(1px, 1px) rotate(0deg);

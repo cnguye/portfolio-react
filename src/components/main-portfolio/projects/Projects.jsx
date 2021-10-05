@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import ProjectCard from "./ProjectCard";
-import ProjectsDesc from "../../projects/ProjectsDesc";
+import ProjectsDesc from "./ProjectsDesc";
 
 import {
     faReact,
@@ -10,7 +10,6 @@ import {
 } from "@fortawesome/free-brands-svg-icons";
 
 import "./projects.scss";
-import Todo from "../../projects/todo/Todo";
 
 export default function Projects({
     activeProject,
@@ -28,12 +27,35 @@ export default function Projects({
             title: "ToDo List",
             langs: [faReact, faJs, faSass, faHtml5],
             img: "todo-list.png",
+            desc: {
+                features: [
+                    "item input",
+                    "item status filter",
+                    "item status toggle",
+                    "item deletion",
+                ],
+            },
         },
         {
             projectKey: "swipeable-news",
             title: "Swipeable News",
             langs: [faReact, faJs, faSass, faHtml5],
             img: "swipeable-news.png",
+            desc: {
+                features: [
+                    "select from various news categories",
+                    "delete news item by swiping",
+                    "restoring deleted news items",
+                    "interactive news items",
+                ],
+                technologies: [
+                    { name: "News API", url: "https://newsapi.org/" },
+                    {
+                        name: "Draggable Social Card",
+                        url: "https://malcoded.com/posts/react-swipeable-list/",
+                    },
+                ],
+            },
         },
     ];
 
@@ -44,7 +66,7 @@ export default function Projects({
 
     return (
         <div
-            id="section-projects"
+            id="projects"
             className={`section section__projects`}
             onClick={handleCloseProject}
         >
@@ -72,6 +94,7 @@ export default function Projects({
             <ProjectsDesc
                 projectDescHovered={projectDescHovered}
                 activeProject={activeProject}
+                projects={projects}
             />
         </div>
     );

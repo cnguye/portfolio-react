@@ -28,7 +28,6 @@
     align-items: center;
     overflow: auto;
     padding-bottom: 10px;
-    padding-top: 55px;
     color: $mainColor;
     text-align: center;
 }
@@ -54,9 +53,9 @@ button:hover {
     .SocialCards-body {
         display: flex;
         justify-content: center;
-
-        flex-wrap: wrap;
         width: 100%;
+        overflow-x: auto;
+        overflow-y: hidden;
     }
 }
 
