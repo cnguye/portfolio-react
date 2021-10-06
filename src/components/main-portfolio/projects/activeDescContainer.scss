@@ -1,12 +1,52 @@
 @import "../../../global.scss";
 
-.project__desc--container {
-    width: 100%;
+.project__desc--body {
     height: 100%;
-    display: grid;
-    grid-template-columns: "";
-    grid-template-rows: "";
-    background-color: red;
-    border-radius: 5px;
+    .project__desc--container {
+        text-align: center;
+        @media (min-width: $tablet) {
+            flex-direction: row;
+            align-items: flex-start;
+        }
+        .desc__container--item .container__item {
+            margin: 0.2rem 0;
+        }
+    }
 
+    .desc__title {
+        font-size: 1.25rem;
+        padding: 0.5rem 0 0.25rem 0;
+    }
+
+    .container--langs {
+        flex: 1;
+        text-align: center;
+        align-self: flex-end;
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        margin: 0 auto;
+        margin-bottom: 0.5rem;
+        .project__lang {
+            font-size: 2rem;
+            margin: 0 1rem;
+
+            
+            &.project__lang--react{
+                animation: flashing-+$clrReact 5s infinite ;
+            }
+            &.project__lang--js{
+                animation: flashing-+$clrJs 5s infinite ;
+                animation-delay: 400ms;
+            }
+            &.project__lang--sass{
+                animation: flashing-+$clrSass 5s infinite ;
+                animation-delay: 800ms;
+            }
+            &.project__lang--html5{
+                animation: flashing-+$clrHtml5 5s infinite ;
+                animation-delay: 1200ms;
+            }
+        }
+    }
 }

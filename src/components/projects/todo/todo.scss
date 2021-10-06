@@ -10,7 +10,7 @@
 .project__header {
     font-size: 1rem;
 
-    @media (min-width: $tablet){
+    @media (min-width: $tablet) {
         font-size: 2rem;
     }
 }
@@ -24,9 +24,12 @@
 .project__form .todo--input,
 .todo-button {
     padding: 0.5rem;
-    font-size: 2rem;
+    font-size: 1rem;
     border: none;
     background: $secondaryColor;
+    @media (min-width: $tablet) {
+        font-size: 2rem;
+    }
 }
 
 .todo__container {
@@ -35,7 +38,6 @@
 }
 
 .todo__list {
-    min-width: 300px;
     list-style: none;
     margin: 1em 0;
 
@@ -52,20 +54,38 @@
 }
 
 .todo {
-    margin-top: 1rem;
     background: $mainColorLite;
-    font-size: 1.5rem;
+    font-size: 0.8rem;
     color: black;
     display: flex;
     justify-content: space-between;
     align-items: center;
     transition: all 1s ease;
+    width: 100%;
+
+    &+ .todo {
+        margin-top: 0.25rem;
+    }
+    .btn--trash,
+    .btn--complete {
+        padding: 0.2rem;
+        font-size: 0.8rem;
+    }
+
+    @media (min-width: $tablet) {
+        padding: 1rem;
+        margin-top: 1rem;
+        font-size: 1.5rem;
+    }
 }
 
 .filter-todo {
-    padding: 1rem;
+    padding: 0 1rem;
     background-color: $secondaryColor;
     color: black;
+    @media (min-height: $tablet) {
+        padding: 1rem;
+    }
 }
 .todo li {
     flex: 1;
@@ -105,6 +125,7 @@
     display: flex;
     flex-direction: row;
     width: 100%;
+    height: 50px;
     .todo--input {
         border: 2px solid $mainColor;
         width: 100%;
@@ -132,9 +153,8 @@
                 margin-left: 0;
             }
         }
-        .project__form--select{
+        .project__form--select {
             width: 100%;
-           
         }
     }
 }
@@ -154,6 +174,8 @@
 
 /* Custom Select */
 .form__select {
+    height: 40px;
+    line-height: 40px;
     position: relative;
     overflow: hidden;
     color: $mainColor;

@@ -42,6 +42,11 @@
     .project__card {
         flex: 0 1 auto;
         margin: 1rem 1rem;
+        max-height: 400px;
+
+        @media (min-width: $tablet){
+            max-height: none;
+        }
     }
 
     .project__overview {

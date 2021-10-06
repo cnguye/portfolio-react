@@ -100,19 +100,19 @@
                     background: $mainColorLite;
                     transform: translateX(-30px);
                     .project__lang--react {
-                        color: rgb(0, 47, 255);
+                        color: $clrReact;
                     }
 
                     .project__lang--js {
-                        color: rgb(255, 251, 0);
+                        color: $clrJs;
                     }
 
                     .project__lang--sass {
-                        color: rgb(255, 79, 108);
+                        color: $clrSass;
                     }
 
                     .project__lang--html5 {
-                        color: red;
+                        color: $clrHtml5;
                     }
                 }
 

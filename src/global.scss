@@ -1,14 +1,14 @@
-$mainColor: rgb(0, 182, 206);
-$mainColorLite: rgb(57, 232, 255);
-$mainColorSplitComp: #ce3a00;
+$mainColor: LimeGreen;
+$mainColorLite: MediumSpringGreen;
+$mainColorSplitComp: Chocolate;
 
-$secondaryColor: rgb(255, 254, 245);
+$secondaryColor: Cornsilk;
 $mainColorOffset: white;
 $mainFontWeight: 300;
 
 // click active color
-$click-active-dark: rgb(0, 0, 0);
-$click-active-light: rgb(255, 254, 245);
+$click-active-dark: black;
+$click-active-light: Cornsilk;
 
 $media800NavBarHeight: 120px;
 $navBarHeight: 120px;
@@ -20,6 +20,15 @@ $mobile: 375px; // iPhone X 375 x 812
 $tablet: 768px; // iPad 768 x 1024
 $desktop: 1024px;
 
+
+// colors
+// -- languages
+$clrReact: DeepSkyBlue;
+$clrJs: Gold;
+$clrSass: DeepPink;
+$clrHtml5: Crimson;
+
+// -- buttons
 $submit: green;
 $warning: orange;
 $danger: red;
@@ -90,7 +99,7 @@ $danger: red;
 }
 
 .project__lang--js:hover {
-    color: rgb(255, 251, 0);
+    color: rgb(255, 238, 0);
 }
 
 .project__lang--sass:hover {
@@ -135,6 +144,21 @@ $danger: red;
     }
     100% {
         transform: translate(1px, -2px) rotate(-1deg);
+    }
+}
+
+$colors: $mainColor, $mainColorLite, $secondaryColor, $clrReact ,$clrJs ,$clrSass ,$clrHtml5 ;
+@for $i from 1 through length($colors) {
+    @keyframes flashing-#{nth($colors, $i)} {
+        0%{
+            color: black;
+        }
+        15% {
+            color: nth($colors, $i);
+        }
+        40%, 100% {
+            color: black;
+        }
     }
 }
 
