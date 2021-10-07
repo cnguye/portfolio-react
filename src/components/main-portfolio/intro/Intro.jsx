@@ -12,7 +12,7 @@ export default function Intro() {
             showCursor: true,
             typeSpeed: 150,
             backDelay: 1500,
-            strings: ["Developer", "Designer", "Creator"],
+            strings: ["Developer", "Designer", "Engineer"],
         });
     }, []);
 
@@ -29,10 +29,12 @@ export default function Intro() {
                     <h1 className="right__wrapper--name">Christopher Nguyen</h1>
                     <h3 className="right__wrapper--title">
                         Full Stack / Software{" "}
-                        <span
-                            ref={textRef}
-                            className="right__wrapper--title-animation"
-                        ></span>
+                        <div className="right__wrapper--title-animation">
+                            <span
+                                ref={textRef}
+                                className="animation__titles"
+                            ></span>
+                        </div>
                     </h3>
                     <div className="wrapper__link--container">
                         <a href="#about-me" className="right__wrapper--link">

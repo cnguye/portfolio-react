@@ -53,7 +53,7 @@ function App() {
     };
     const [menuOpen, setMenuOpen] = useState(false);
 
-    const [activeProject, setActiveProject] = useState("todo");
+    const [activeProject, setActiveProject] = useState("");
     const [projectDescHovered, setProjectDescHovered] = useState(false);
     const [projectClicked, setProjectClicked] = useState(true);
 

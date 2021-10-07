@@ -16,12 +16,16 @@
 
         .section {
             min-height: $viewHeight;
-            padding: 0.5rem 0.5rem 0 0.5rem;
+            padding: 0.5rem;
             position: relative;
 
             .section__title {
                 padding-top: 0.5em;
-                font-size: 2rem;
+                font-size: 1.5rem;
+
+                @media (min-width: $tablet){
+                    font-size: 2rem;
+                }
             }
 
             @media (min-width: $desktop) {

@@ -2,27 +2,43 @@
 
 .project__desc--body {
     height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
     .project__desc--container {
         text-align: center;
         @media (min-width: $tablet) {
             flex-direction: row;
             align-items: flex-start;
         }
-        .desc__container--item .container__item {
-            margin: 0.2rem 0;
+
+        .desc__container--item {
+            position: relative;
+            .container__item {
+                margin: 0.2rem 0;
+                position: relative;
+            }
+            .desc__title {
+                font-size: 1.25rem;
+                padding: 1rem 0 0.25rem 0;
+                position: relative;
+                width: 100%;
+                &:after {
+                    content: "";
+                    display: block;
+                    background: $mainColorLite;
+                    height: 2px;
+                    width: 3rem;
+                    text-align: center;
+                    margin: 0.5rem auto 0.25rem;
+                }
+            }
         }
     }
 
-    .desc__title {
-        font-size: 1.25rem;
-        padding: 0.5rem 0 0.25rem 0;
-    }
 
     .container--langs {
-        flex: 1;
         text-align: center;
-        align-self: flex-end;
-        position: absolute;
         bottom: 0;
         width: 100%;
         margin: 0 auto;
@@ -31,21 +47,22 @@
             font-size: 2rem;
             margin: 0 1rem;
 
-            
-            &.project__lang--react{
-                animation: flashing-+$clrReact 5s infinite ;
+            &.project__lang--react {
+                animation: flashing- + $clrReact 4s infinite;
+                animation-delay: 1000ms;
+
             }
-            &.project__lang--js{
-                animation: flashing-+$clrJs 5s infinite ;
-                animation-delay: 400ms;
+            &.project__lang--js {
+                animation: flashing- + $clrJs 4s infinite;
+                animation-delay: 1100ms;
             }
-            &.project__lang--sass{
-                animation: flashing-+$clrSass 5s infinite ;
-                animation-delay: 800ms;
-            }
-            &.project__lang--html5{
-                animation: flashing-+$clrHtml5 5s infinite ;
+            &.project__lang--sass {
+                animation: flashing- + $clrSass 4s infinite;
                 animation-delay: 1200ms;
+            }
+            &.project__lang--html5 {
+                animation: flashing- + $clrHtml5 4s infinite;
+                animation-delay: 1300ms;
             }
         }
     }

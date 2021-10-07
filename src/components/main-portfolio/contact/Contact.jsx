@@ -22,7 +22,7 @@ export default function Contact() {
                 {!thankYouMessage ? (
                     <div className="section__form">
                         <h2 className="section__title right__item right__item--title">
-                            Contact.
+                            Send me a message..
                         </h2>
                         <form
                             onSubmit={submitHandler}
@@ -35,12 +35,13 @@ export default function Contact() {
                                 cols="30"
                                 rows="10"
                             ></textarea>
-                            <button className="form__item form--submit">Send</button>
+                            <button className="form__item btn__form form--submit">Send</button>
                         </form>
                     </div>
                 ) : (
                     <div className="thank-you-msg">
-                        <span className="thank-you-msg--text">Thanks for the message! I'll get back to you soon...</span>
+                        <div className="thank-you-msg--text">Thanks for the message! I'll get back to you soon...</div>
+                        <button onClick={() => setThankYouMessage(false)} className="btn__form btn__send-another">Send another?</button>
                     </div>
                 )}
             </div>

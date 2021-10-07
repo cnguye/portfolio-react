@@ -1,13 +1,15 @@
 @import "../../../global.scss";
 
 .section__background {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
     max-width: 1200px;
     margin: 0 auto;
     position: relative;
     color: $mainColor;
+    padding: 0 1rem;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
 
     .section__half {
         display: block;
@@ -18,6 +20,7 @@
         .whoIAm {
             width: 100%;
             margin: 0 auto;
+            padding: 0 0.5rem;
             .section__subtitle--about {
                 font-weight: 300;
             }
@@ -71,9 +74,7 @@
             }
         }
     }
-
     .section__moreAboutMe {
-        padding-top: 8em;
         clear: right;
         .section__title {
             text-align: center;

@@ -6,13 +6,12 @@
     flex-direction: column;
     align-items: center;
     width: 100%;
-    border-top-left-radius: 10px;
-    border-bottom-left-radius: 10px;
-    border-left: 3px solid $mainColor;
-    border-top: 3px solid $mainColor;
-    border-bottom: 3px solid $mainColor;
+    // border-top-left-radius: 10px;
+    // border-bottom-left-radius: 10px;
+    // border-left: 3px solid $mainColor;
+    // border-top: 3px solid $mainColor;
+    // border-bottom: 3px solid $mainColor;
 
-    box-shadow: -5px 5px 5px -3px $mainColorLite;
     background: $mainColorLite;
     position: absolute;
     top: 0;
@@ -44,7 +43,7 @@
         margin: 1rem 1rem;
         max-height: 400px;
 
-        @media (min-width: $tablet){
+        @media (min-width: $tablet) {
             max-height: none;
         }
     }
@@ -58,6 +57,7 @@
     }
 
     @media (min-width: $desktop) {
+        box-shadow: -8px 8px 5px -3px $mainColor;
         width: 80%;
         right: -80%;
     }

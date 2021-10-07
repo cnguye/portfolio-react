@@ -50,18 +50,33 @@
             flex-direction: column;
             justify-content: flex-start;
             align-items: center;
-
             .right__wrapper--intro {
-                font-size: 40px;
+                font-size: 30px;
             }
             .right__wrapper--name {
-                font-size: 55px;
+                font-size: 40px;
             }
             .right__wrapper--title {
-                font-size: 30px;
+                font-size: 20px;
+                display: flex;
+                align-items: center;
+                flex-direction: column;
                 .right__wrapper--title-animation {
-                    font-size: inherit;
-                    color: $mainColorSplitComp;
+                    margin-left: 0.4rem;
+                    font-size: 20px;
+                    display: inline-block;
+                    line-height: 20px;
+                    color: Chocolate;
+                }
+                .ityped-cursor {
+                    font-size: 22px;
+                    opacity: 1;
+                    -webkit-animation: blink-cursor 1.2s infinite;
+                    -moz-animation: blink-cursor 1.2s infinite;
+                    animation: blink-cursor 1.2s infinite;
+                }
+                @media (min-width: $tablet) {
+                    flex-direction: row;
                 }
             }
             .wrapper__link--container {

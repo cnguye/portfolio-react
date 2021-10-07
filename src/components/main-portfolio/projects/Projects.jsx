@@ -29,7 +29,7 @@ export default function Projects({
             img: "todo-list.png",
             desc: {
                 features: [
-                    "item input",
+                    "user input",
                     "item status filter",
                     "item status toggle",
                     "item deletion",

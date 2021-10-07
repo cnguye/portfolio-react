@@ -153,10 +153,10 @@ $colors: $mainColor, $mainColorLite, $secondaryColor, $clrReact ,$clrJs ,$clrSas
         0%{
             color: black;
         }
-        15% {
+        10% {
             color: nth($colors, $i);
         }
-        40%, 100% {
+        30%, 100% {
             color: black;
         }
     }
@@ -173,4 +173,25 @@ $colors: $mainColor, $mainColorLite, $secondaryColor, $clrReact ,$clrJs ,$clrSas
     100% {
         opacity: 0.1;
     }
+}
+
+@keyframes blink-cursor {
+    0% { opacity: 1; }
+    49% { opacity: 1; }
+    50% { opacity: 0; }
+   100% { opacity: 0; }
+}
+
+@-webkit-keyframes blink-cursor {
+    0% { opacity: 1; }
+    49% { opacity: 1; }
+    50% { opacity: 0; }
+   100% { opacity: 0; }
+}
+
+@-moz-keyframes blink-cursor {
+    0% { opacity: 1; }
+    49% { opacity: 1; }
+    50% { opacity: 0; }
+   100% { opacity: 0; }
 }
