@@ -375,4 +375,6 @@ yarn-error.log*
 # custom
 README.old.md
 package-lock.json
-package.json
+#package.json
+/src/components/projects/swipeable-news/config.js
+#server.js
