@@ -12,23 +12,11 @@ export default function ProjectsDesc({
     projectDescHovered,
     activeProject,
     projects,
+    windoWidth,
 }) {
     const [activeProjectProps, setActiveProjectProps] = useState([]);
-
-    const handleStopPropagation = (e) => {
-        e.stopPropagation();
-    };
-
-    useEffect(() => {
-        let projectCodex = [];
-        projects.forEach((project) => {
-            if (project.projectKey === activeProject) {
-                projectCodex = project;
-            }
-        });
-        setActiveProjectProps(projectCodex);
-    }, [activeProject, projects]);
-
+    const [isDescActive, setIsDescActive] = useState(false);
+    
     const renderProject = (selectedProject) => {
         switch (selectedProject) {
             case "todo":
@@ -40,19 +28,57 @@ export default function ProjectsDesc({
         }
     };
 
+    const handleStopPropagation = (e) => {
+        e.stopPropagation();
+    };
+
+    const handleOpenProjectDesc = (e) => {
+        e.stopPropagation();
+        setIsDescActive(()=> !isDescActive)
+    }
+    
+    useEffect(() => {
+        let projectCodex = [];
+        projects.forEach((project) => {
+            if (project.projectKey === activeProject) {
+                projectCodex = project;
+            }
+        });
+        setActiveProjectProps(projectCodex);
+    }, [activeProject, projects]);
+    
+
+
+
     return (
         <div
             id="project-desc"
             className={`project__desc ${activeProject !== "" ? "active" : ""} ${
                 projectDescHovered ? "hovered" : ""
             }`}
-            
         >
             <Card className="project__card" onClick={handleStopPropagation}>
                 {renderProject(activeProject)}
             </Card>
-            <div className="project__overview" onClick={handleStopPropagation}>
-                <ActiveDescContainer activeProjectProps={activeProjectProps} />
+            <div
+                className={`project__overview--pseudo-body  ${
+                    windoWidth < 800 && "project__overview-m"
+                } ${isDescActive ? "project__overview--active" : ''}`}
+                onClick={handleStopPropagation}
+            >
+                <div
+                    className={`project__overview--pseudo-container ${isDescActive ? "project__overview--active" : ''}`}
+                    onClick={handleOpenProjectDesc}
+                    >
+                    <div
+                        className={`project__overview`}
+                        onClick={handleStopPropagation}
+                    >
+                        <ActiveDescContainer
+                            activeProjectProps={activeProjectProps}
+                        />
+                    </div>
+                </div>
             </div>
         </div>
     );

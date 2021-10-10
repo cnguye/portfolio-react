@@ -2,14 +2,15 @@
 
 .project__desc--body {
     height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
+    padding-left: 0.5rem;
     .project__desc--container {
-        text-align: center;
         @media (min-width: $tablet) {
-            flex-direction: row;
+            display: flex;
+            margin: 0.5rem auto;
             align-items: flex-start;
+            justify-content: space-evenly;
+            width: 50%;
+            text-align: center;
         }
 
         .desc__container--item {
@@ -26,11 +27,10 @@
                 &:after {
                     content: "";
                     display: block;
-                    background: $mainColorLite;
+                    background: $secondaryColor;
                     height: 2px;
                     width: 3rem;
-                    text-align: center;
-                    margin: 0.5rem auto 0.25rem;
+                    margin: 0.25rem 0 0rem;
                 }
             }
         }
@@ -38,11 +38,9 @@
 
 
     .container--langs {
-        text-align: center;
         bottom: 0;
         width: 100%;
-        margin: 0 auto;
-        margin-bottom: 0.5rem;
+        padding-bottom: 0.5rem;
         .project__lang {
             font-size: 2rem;
             margin: 0 1rem;
@@ -64,6 +62,9 @@
                 animation: flashing- + $clrHtml5 4s infinite;
                 animation-delay: 1300ms;
             }
+        }
+        @media (min-width: $tablet) {
+            text-align: center;
         }
     }
 }

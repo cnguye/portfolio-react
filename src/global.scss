@@ -10,16 +10,16 @@ $mainFontWeight: 300;
 $click-active-dark: black;
 $click-active-light: Cornsilk;
 
-$media800NavBarHeight: 120px;
-$navBarHeight: 120px;
-
-$viewHeight: calc(100vh - #{$navBarHeight});
-
 // media queries and breakpoints
 $mobile: 375px; // iPhone X 375 x 812
 $tablet: 768px; // iPad 768 x 1024
 $desktop: 1024px;
 
+$navBarHeight: 120px;
+$mobileNavBarHeight: 90px;
+
+$viewHeight: calc(100vh - #{$navBarHeight});
+$mobileViewHeight: calc(100vh - #{$mobileNavBarHeight});
 
 // colors
 // -- languages

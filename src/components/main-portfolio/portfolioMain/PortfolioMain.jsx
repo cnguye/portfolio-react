@@ -14,12 +14,13 @@ export default function PortfolioMain({
     setProjectClicked,
     setMenuOpen,
     menuOpen,
+    windoWidth
 }) {
     return (
         <React.Fragment>
-            <Intro />
+            {/* <Intro />
             <AboutMe />
-            <Background />
+            <Background /> */}
             <Projects
                 activeProject={activeProject}
                 setActiveProject={setActiveProject}
@@ -29,6 +30,7 @@ export default function PortfolioMain({
                 setProjectClicked={setProjectClicked}
                 setMenuOpen={setMenuOpen}
                 menuOpen={menuOpen}
+                windoWidth={windoWidth}
             />
         </React.Fragment>
     );

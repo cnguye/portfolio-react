@@ -26,10 +26,24 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    overflow: auto;
+    // overflow: auto;
     padding-bottom: 10px;
     color: $mainColor;
     text-align: center;
+
+    .swipeable-news-title {
+        font-size: 22px;
+        @media (min-width: $tablet) {
+            font-size: 30px;
+        }
+    }
+
+    .swipeable-news-sub-title {
+        font-size: 16px;
+        @media (min-width: $tablet) {
+            font-size: 22px;
+        }
+    }
 }
 
 button {
@@ -52,10 +66,9 @@ button:hover {
 @media (min-width: 800px) {
     .SocialCards-body {
         display: flex;
-        justify-content: center;
         width: 100%;
         overflow-x: auto;
-        overflow-y: hidden;
+        overflow-y: auto;
     }
 }
 

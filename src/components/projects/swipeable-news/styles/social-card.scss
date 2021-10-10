@@ -1,20 +1,26 @@
-@import '../../../../global.scss';
+@import "../../../../global.scss";
 
-.social-cards--body {
-    margin: 15px 10px 0px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    color: black;
-    padding: 10px;
-    background: rgba($mainColor, 0.75);
-    border-radius: 5px;
-    min-width: 400px;
+.social-card--body {
+    margin: 1rem auto;
+    .social-card--proxy-body {
+        margin: 15px 10px 0px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        color: black;
+        padding: 10px;
+        background: rgba($mainColor, 0.75);
+        border-radius: 5px;
+        min-width: 400px;
+    }
 }
 
 @media (min-width: 800px) {
-    .social-cards--body {
-        width: 400px;
+    .social-card--body {
+        .social-card--proxy-body {
+            width: 400px;
+            margin: 0.5rem;
+        }
     }
 }
 
@@ -65,7 +71,7 @@
     position: relative;
     transition: opacity 0.25s ease-out, height 0.5s ease-out 0.2s;
     width: 100%;
-    height: 200px;
+    height: 180px;
     display: block;
     user-select: none;
     color: var(--clr-light);
@@ -143,8 +149,8 @@
     grid-template-columns: 40% 1fr;
     grid-template-rows: 30% 1fr;
     grid-template-areas:
-        'img header'
-        'img description';
+        "img header"
+        "img description";
     column-gap: 10px;
     row-gap: 5px;
     overflow: hidden;
@@ -163,18 +169,17 @@
     grid-template-columns: 40% 1fr;
     grid-template-rows: 30% 1fr;
     grid-template-areas:
-        'img header'
-        'img description';
+        "img header"
+        "img description";
     column-gap: 10px;
     row-gap: 5px;
     overflow: hidden;
     position: relative;
 }
 
-.social-cards--title {
+.social-card--title {
     text-transform: capitalize;
     font-size: 1.5rem;
-    color: $secondaryColor;
 }
 
 .SocialCard-section {
@@ -186,12 +191,12 @@
 .SocialCard-section__header-body {
     grid-area: header;
     align-self: start;
-            font-size: 1rem;
+    font-size: 1rem;
     margin-top: 10px;
 
     .SocialCard-section__header-icon {
-        height: 50px;
-        width: 50px;
+        height: 40px;
+        width: 40px;
         background: $mainColor;
         position: relative;
         .SocialCard-section__header-icon--img {
@@ -205,8 +210,14 @@
 
     .SocialCard-section__header-text {
         margin-left: 0.5rem;
+        max-height: 20px;
         .SocialCard-section__header-text--source {
             font-weight: bold;
+            font-size: 0.95rem;
+            width: 150px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
         }
         .SocialCard-section__header-text--publish-date {
             font-size: 0.8rem;

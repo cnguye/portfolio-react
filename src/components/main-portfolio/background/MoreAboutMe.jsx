@@ -12,7 +12,6 @@ export default function MoreAboutMe() {
     const [expanded, setExpanded] = useState(false);
 
     const handleClick = (panel) => (event) => {
-        console.log(panel);
         setExpanded(expanded === panel ? "" : panel);
     };
 
@@ -76,7 +75,7 @@ export default function MoreAboutMe() {
                             Bassjackers, and Afrojack. The way they were able to
                             get a crowd jumping made me feel that there was no
                             reason I couldn't either. I started off with a
-                            Nurmark Mix Track Pro II as a bedroom DJ. A few
+                            Newmark Mix Track Pro II as a bedroom DJ. A few
                             years later, I became the main EDM DJ for Cal State
                             LA, playing live sets with my XDJ-RX2. From there I
                             started learning how to scratch and to read a crowd.

@@ -110,7 +110,6 @@ class SocialCardDraggable extends React.Component {
             } else {
                 this.left = 0;
             }
-            console.log(this.left);
             this.listElement.style.transform = `translateX(${
                 this.left / 1.2
             }px)`;

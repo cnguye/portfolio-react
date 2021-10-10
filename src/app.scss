@@ -4,7 +4,7 @@
     .sections {
         overflow-x: hidden;
         width: 100%;
-        height: $viewHeight;
+        height: $mobileViewHeight;
         position: relative;
         // scrollbar functionality
         scroll-behavior: smooth;
@@ -15,7 +15,7 @@
         }
 
         .section {
-            min-height: $viewHeight;
+            min-height: $mobileViewHeight;
             padding: 0.5rem;
             position: relative;
 
@@ -27,7 +27,9 @@
                     font-size: 2rem;
                 }
             }
-
+            @media (min-width: $desktop) {
+                min-height: $viewHeight;
+            }
             @media (min-width: $desktop) {
                 padding: 4em 10rem;
                 font-size: auto;
@@ -36,7 +38,10 @@
     }
 
     .offsetNavBar {
-        margin-top: $navBarHeight;
+        margin-top: $mobileNavBarHeight;
+        @media ( min-width: $desktop) {
+            margin-top: $navBarHeight;
+        }
     }
 
     .wrapper__link--container {

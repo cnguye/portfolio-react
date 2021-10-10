@@ -5,7 +5,7 @@ import ScrollToTop from "./components/ScrollToTop";
 
 import PortfolioMain from "./components/main-portfolio/portfolioMain/PortfolioMain";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 import "./app.scss";
 
@@ -53,10 +53,20 @@ function App() {
     };
     const [menuOpen, setMenuOpen] = useState(false);
 
-    const [activeProject, setActiveProject] = useState("");
+    const [activeProject, setActiveProject] = useState("todo");
     const [projectDescHovered, setProjectDescHovered] = useState(false);
     const [projectClicked, setProjectClicked] = useState(true);
-
+    const [windoWidth, setWindowWidth] = useState(window.innerWidth);
+    function handleWindowSizeChange() {
+        setWindowWidth(window.innerWidth);
+        }
+    useEffect(() => {
+            window.addEventListener('resize', handleWindowSizeChange);
+            return () => {
+                window.removeEventListener('resize', handleWindowSizeChange);
+            }
+        }, []);
+    
     // is this bad practice...?
     const [navMenu, setNavMenu] = useState(() => {
         switch (window.location.pathname) {
@@ -102,6 +112,7 @@ function App() {
                             setProjectClicked={setProjectClicked}
                             setMenuOpen={setMenuOpen}
                             menuOpen={menuOpen}
+                            windoWidth={windoWidth}
                         />
                     </Route>
                     <Contact />

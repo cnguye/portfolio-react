@@ -20,6 +20,7 @@ export default function Projects({
     setProjectClicked,
     setMenuOpen,
     menuOpen,
+    windoWidth
 }) {
     const projects = [
         {
@@ -95,6 +96,7 @@ export default function Projects({
                 projectDescHovered={projectDescHovered}
                 activeProject={activeProject}
                 projects={projects}
+                windoWidth={windoWidth}
             />
         </div>
     );
