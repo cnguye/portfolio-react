@@ -24,7 +24,7 @@ export default function SwipeableNews() {
             let category = "general";
             let pagesize = 3;
             fetch(
-                `http://localhost:5000/api/projects?country=${country}&category=${category}&pagesize=${pagesize}`, {
+                `http://107.152.46.30/api/projects?country=${country}&category=${category}&pagesize=${pagesize}`, {
                     headers : { 
                       'Content-Type': 'application/json',
                       'Accept': 'application/json'

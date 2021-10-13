@@ -16,7 +16,7 @@ export default function ProjectsDesc({
 }) {
     const [activeProjectProps, setActiveProjectProps] = useState([]);
     const [isDescActive, setIsDescActive] = useState(false);
-    
+
     const renderProject = (selectedProject) => {
         switch (selectedProject) {
             case "todo":
@@ -34,9 +34,9 @@ export default function ProjectsDesc({
 
     const handleOpenProjectDesc = (e) => {
         e.stopPropagation();
-        setIsDescActive(()=> !isDescActive)
-    }
-    
+        setIsDescActive(() => !isDescActive);
+    };
+
     useEffect(() => {
         let projectCodex = [];
         projects.forEach((project) => {
@@ -46,9 +46,6 @@ export default function ProjectsDesc({
         });
         setActiveProjectProps(projectCodex);
     }, [activeProject, projects]);
-    
-
-
 
     return (
         <div
@@ -60,24 +57,28 @@ export default function ProjectsDesc({
             <Card className="project__card" onClick={handleStopPropagation}>
                 {renderProject(activeProject)}
             </Card>
+
             <div
-                className={`project__overview--pseudo-body  ${
-                    windoWidth < 800 && "project__overview-m"
-                } ${isDescActive ? "project__overview--active" : ''}`}
+                className={`project__overview ${isDescActive ? "active" : ""}`}
                 onClick={handleStopPropagation}
             >
                 <div
-                    className={`project__overview--pseudo-container ${isDescActive ? "project__overview--active" : ''}`}
-                    onClick={handleOpenProjectDesc}
-                    >
+                    className={`project__overview--container ${
+                        isDescActive ? "active" : ""
+                    }`}
+                >
                     <div
-                        className={`project__overview`}
-                        onClick={handleStopPropagation}
+                        className={`project__overview--btn ${
+                            isDescActive ? "active" : ""
+                        }`}
+                        onClick={handleOpenProjectDesc}
                     >
-                        <ActiveDescContainer
-                            activeProjectProps={activeProjectProps}
-                        />
+                        {isDescActive ? "X" : "?"}
                     </div>
+                    <ActiveDescContainer
+                        activeProjectProps={activeProjectProps}
+                        isDescActive={isDescActive}
+                    />
                 </div>
             </div>
         </div>

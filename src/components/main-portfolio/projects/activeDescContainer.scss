@@ -1,10 +1,25 @@
 @import "../../../global.scss";
 
 .project__desc--body {
-    height: 100%;
     padding-left: 0.5rem;
+    text-align: left;
+    height: 100%;
+    width: 100%;
+    color: $mainColor;
+    transition: color 200ms ease;
+
+    &.active {
+        transition: color 300ms ease 300ms;
+        color: $secondaryColor;
+    }
+
+    @media (min-width: $tablet) {
+        color: $secondaryColor;
+    }
+
     .project__desc--container {
         @media (min-width: $tablet) {
+            margin-top: 0.5rem;
             display: flex;
             margin: 0.5rem auto;
             align-items: flex-start;
@@ -21,26 +36,39 @@
             }
             .desc__title {
                 font-size: 1.25rem;
-                padding: 1rem 0 0.25rem 0;
+                padding: 0.25rem 0 0.25rem 0;
                 position: relative;
                 width: 100%;
                 &:after {
                     content: "";
                     display: block;
-                    background: $secondaryColor;
+                    background: $mainColor;
                     height: 2px;
                     width: 3rem;
                     margin: 0.25rem 0 0rem;
+
+                    @media (min-width: $tablet) {
+                        background: $secondaryColor;
+                        margin: 0.25rem auto;
+                    }
+                }
+
+                &.active::after {
+                    transition: background-color 300ms ease 300ms;
+                    background-color: $secondaryColor;
                 }
             }
         }
     }
 
-
     .container--langs {
-        bottom: 0;
         width: 100%;
-        padding-bottom: 0.5rem;
+        padding: 0.5rem 0;
+        position: absolute;
+        bottom: 0;
+        margin-bottom: 1rem;
+        opacity: 0;
+        transition: fadeIn 500ms ease 300ms;
         .project__lang {
             font-size: 2rem;
             margin: 0 1rem;
@@ -48,7 +76,6 @@
             &.project__lang--react {
                 animation: flashing- + $clrReact 4s infinite;
                 animation-delay: 1000ms;
-
             }
             &.project__lang--js {
                 animation: flashing- + $clrJs 4s infinite;
@@ -63,8 +90,14 @@
                 animation-delay: 1300ms;
             }
         }
+        &.active {
+            animation: fadeIn 500ms ease 300ms forwards;
+        }
         @media (min-width: $tablet) {
+            position: relative;
             text-align: center;
+            opacity: 1;
+            margin-bottom: 0;
         }
     }
 }

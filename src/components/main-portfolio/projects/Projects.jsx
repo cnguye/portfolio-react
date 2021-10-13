@@ -31,9 +31,9 @@ export default function Projects({
             desc: {
                 features: [
                     "user input",
+                    "item deletion",
                     "item status filter",
                     "item status toggle",
-                    "item deletion",
                 ],
             },
         },
@@ -44,10 +44,10 @@ export default function Projects({
             img: "swipeable-news.png",
             desc: {
                 features: [
-                    "select from various news categories",
-                    "delete news item by swiping",
-                    "restoring deleted news items",
+                    "swipe delete items",
                     "interactive news items",
+                    "restoring deleted items",
+                    "news category selection",
                 ],
                 technologies: [
                     { name: "News API", url: "https://newsapi.org/" },

@@ -99,7 +99,7 @@ $danger: red;
 }
 
 .project__lang--js:hover {
-    color: rgb(255, 238, 0);
+    color: rgb(255, 208, 0);
 }
 
 .project__lang--sass:hover {
@@ -151,13 +151,13 @@ $colors: $mainColor, $mainColorLite, $secondaryColor, $clrReact ,$clrJs ,$clrSas
 @for $i from 1 through length($colors) {
     @keyframes flashing-#{nth($colors, $i)} {
         0%{
-            color: black;
+            color: $secondaryColor;
         }
         10% {
             color: nth($colors, $i);
         }
         30%, 100% {
-            color: black;
+            color: $secondaryColor;
         }
     }
 }
@@ -166,6 +166,41 @@ $colors: $mainColor, $mainColorLite, $secondaryColor, $clrReact ,$clrJs ,$clrSas
     to {
         text-shadow: 0 0 5px #fff, 0 0 1px rgb(255, 72, 0),
             0 0 1px rgb(255, 72, 0);
+    }
+}
+
+@keyframes fadeOut {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes squareCorner{
+    0% {
+        border-top-right-radius: 70%;
+    }
+    100% {
+        border-top-right-radius: 0%;
+    }
+}
+@keyframes roundCorner{
+    0% {
+        border-top-right-radius: 0%;
+    }
+    100% {
+        border-top-right-radius: 70%;
     }
 }
 

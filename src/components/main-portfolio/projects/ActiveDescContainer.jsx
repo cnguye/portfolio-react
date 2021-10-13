@@ -3,14 +3,18 @@ import React from "react";
 
 import "./activeDescContainer.scss";
 
-export default function ActiveDescgrid({ activeProjectProps }) {
+export default function ActiveDescgrid({
+    activeProjectProps,
+    isDescActive,
+}) {
+
     return (
-        <div className="project__desc--body">
+        <div className={`project__desc--body ${isDescActive ? 'active' : ''}`}>
             <div className="project__desc--container">
                 <div className="desc__container--item container--features">
                     {activeProjectProps.desc &&
                         activeProjectProps.desc.features && (
-                            <div className="desc__title">Features</div>
+                            <div className={`desc__title ${isDescActive && 'active'}`}>Features</div>
                         )}
                     {activeProjectProps.desc &&
                         activeProjectProps.desc.features &&
@@ -28,7 +32,7 @@ export default function ActiveDescgrid({ activeProjectProps }) {
                 {activeProjectProps.desc &&
                     activeProjectProps.desc.technologies && (
                         <div className="desc__container--item container--technologies">
-                            <div className="desc__title">Technologies</div>
+                            <div className={`desc__title ${isDescActive && 'active'}`}>Technologies</div>
                             {activeProjectProps.desc.technologies.map(
                                 (technology, index) => (
                                     <div
@@ -42,14 +46,14 @@ export default function ActiveDescgrid({ activeProjectProps }) {
                         </div>
                     )}
             </div>
-            <div className="grid__container container--langs">
+            <div className={`grid__container container--langs ${isDescActive ? 'active' : ''}`}>
                 {activeProjectProps.desc && (
                     <div className="grid__item grid__langs project__langs">
                         {activeProjectProps.langs.map((lang) => (
                             <FontAwesomeIcon
                                 key={`project_lang-${lang.iconName}`}
                                 icon={lang}
-                                className={`project__lang project__lang--${lang.iconName}`}
+                                className={`project__lang project__lang--${lang.iconName} ${isDescActive && 'active'}`}
                             />
                         ))}
                     </div>

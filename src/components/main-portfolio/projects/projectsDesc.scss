@@ -6,21 +6,17 @@
     flex-direction: column;
     align-items: center;
     width: 100%;
-    // border-top-left-radius: 10px;
-    // border-bottom-left-radius: 10px;
-    // border-left: 3px solid $mainColor;
-    // border-top: 3px solid $mainColor;
-    // border-bottom: 3px solid $mainColor;
-
+    bottom: 20px;
     background: $mainColorLite;
     position: absolute;
     top: 0;
     right: -100%;
-    bottom: 20px;
     z-index: 2;
-    transition: all 500ms ease;
+    transition: right 500ms ease, box-shadow 300ms ease;
+    overflow: hidden;
 
     &.active {
+        box-shadow: -5px 5px 15px -3px $mainColorLite;
         right: 0;
     }
 
@@ -32,91 +28,139 @@
         }
     }
 
-    .project__card,
-    .project__overview--pseudo-body {
-        max-width: 90%;
-        width: 100%;
-    }
-
     .project__card {
         flex: 1 1 auto;
         margin: 1rem;
-        @media (min-width: $tablet) {
+        position: absolute;
+        overflow: hidden;
+        inset: 0;
+
+        @media (min-width: $tablet){
+            position: relative;
+            width: 90%;
+            overflow: unset;
         }
     }
 
-    .project__overview--pseudo-body.project__overview-m {
+    .project__overview {
         position: absolute;
         bottom: 0;
-        height: 33px;
+        left: 0;
         margin-bottom: 1rem;
+        margin-left: 1rem;
+        height: 50px;
+        width: 50px;
         overflow: hidden;
-        transition-duration: 0.5s;
+        transition-property: width, height;
+        transition-duration: 600ms;
         transition-timing-function: ease;
-        .project__overview--pseudo-container {
+
+        .project__overview--container {
             position: absolute;
-            width: 33px;
-            height: 33px;
-            overflow: hidden;
-            white-space: nowrap;
+            background-color: $mainColor;
+            width: 300px;
+            height: 300px;
+            border-top-right-radius: 100%;
+            padding: 1rem 0;
             bottom: 0;
-            border-top-right-radius: 75%;
-            // transition-property: width, height, border-radius, bottom, left, right, top;
-            transition-duration: 0.5s;
+            transform: translate(-62%, 62%);
+            transition-property: transform, box-shadow;
             transition-timing-function: ease;
+            transition-duration: 500ms;
 
-            &:after {
+            .project__overview--btn {
                 position: absolute;
-                z-index: 999;
-                content: "?";
-                font-size: 1rem;
-                width: 33px;
-                height: 33px;
+                z-index: 40;
+                right: 0;
+                background-color: $mainColor;
+                height: 30px;
+                width: 30px;
+                border-radius: 50%;
+                line-height: 30px;
                 text-align: center;
-                background-color: $mainColor;
-                line-height: 40px;
                 color: $secondaryColor;
-                bottom: 0;
-                right: auto;
-            }
-            .project__overview {
-                position: absolute;
-                width: 100%;
-                background-color: $mainColor;
-                border-top-left-radius: 5px;
-                border-top-right-radius: 5px;
-
-                z-index: 100;
-                bottom: 0;
-            }
-
-            &.project__overview--active {
-                border-radius: 0;
-                width: 100%;
-                height: 400px;
-
+                transform: translate(-275%, 225%);
+                transition-property: transform, box-shadow;
+                transition-timing-function: ease;
+                transition-duration: 500ms;
                 &:after {
-                    content: "x";
-                    left: auto;
+                    position: absolute;
                     right: 0;
+                    z-index: -1;
+                    content: "";
+                    height: 17px;
+                    width: 17px;
+                    background-color: $mainColor;
+                    border-radius: 50%;
+                    transition: transform 500ms ease 100ms;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                }
+
+                &.active {
+                    transition: transform 500ms ease;
+                    box-shadow: 0px 0px 5px 2px $mainColorLite;
+                    transform: translate(-100%, 100%);
+                    &:after {
+                        box-shadow: 0px 0px 5px 2px $mainColorLite;
+                        transform: translate(-175%, 100%);
+                    }
                 }
             }
+            &.active {
+                box-shadow: 3px 0px 5px 2px $mainColorLite;
+                transform: translate(0, 0);
+                margin-right: 1rem;
+            }
         }
-        &.project__overview--active {
-            height: 100%;
-            width: 100%;
+        &.active {
+            transition-duration: 200ms;
+            width: calc(300px + 1rem);
+            height: calc(300px + 1rem);
+        }
+
+        @media (min-width: $tablet) {
+            position: relative;
+            width: 90%;
+            height: auto;
+            overflow: unset;
+            margin: 0 auto 1rem auto;
+            &.active {
+                width: 100%;
+            }
+
+            .project__overview--container {
+                position: relative;
+                background-color: $mainColor;
+                width: 100%;
+                height: 100%;
+                border-radius: 0%;
+                line-height: 1rem;
+                text-align: center;
+                color: $secondaryColor;
+                transform: translate(0, 0);
+                
+                &.active {
+                    box-shadow: 0;
+                    transform: translate(0, 0);
+                }
+
+                .project__overview--btn {
+                    display: none;
+                }
+            }
         }
     }
 
     @media (min-width: $desktop) {
-        box-shadow: -8px 8px 5px -3px $mainColor;
         width: 80%;
         right: -80%;
     }
 }
 
 .project__body {
-    padding: 1em 0em;
+    padding: 1rem 0;
     height: 100%;
     background-color: $secondaryColor;
 }
