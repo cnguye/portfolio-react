@@ -12,6 +12,12 @@
         background: rgba($mainColor, 0.75);
         border-radius: 5px;
         min-width: 400px;
+        @media (max-width: $tablet){
+            min-width: 0;
+        }
+    }
+    @media (max-width: $tablet){
+        margin: 0;
     }
 }
 
@@ -75,6 +81,10 @@
     display: block;
     user-select: none;
     color: var(--clr-light);
+
+    @media (max-width: $tablet) {
+        height: auto;
+    }
 }
 
 .WrapperOut {
@@ -175,11 +185,32 @@
     row-gap: 5px;
     overflow: hidden;
     position: relative;
+
+    @media (max-width: $tablet) {
+        grid-template-areas: "img description";
+        grid-template-rows: 1fr;
+        height: auto;
+        .SocialCard-section__header-body {
+            display: none;
+            .SocialCard-section__header-icon {
+                background-color: coral;
+            }
+        }
+        .SocialCard-section__text-body {
+            .SocialCard-section__text-body--description {
+                display: none;
+            }
+        }
+    }
 }
 
 .social-card--title {
     text-transform: capitalize;
     font-size: 1.5rem;
+
+    @media (max-width: $tablet){
+        font-size: 1.2rem;
+    }
 }
 
 .SocialCard-section {
@@ -241,19 +272,23 @@
         flex-direction: column;
         justify-content: center;
         align-items: center;
-
         backdrop-filter: blur(3px);
         overflow: hidden;
         height: 100%;
         width: 100%;
-
         text-decoration: none;
 
         .SocialCard-section__img-body--img {
-            width: 120%;
             height: auto;
             text-align: center;
             color: var(--clr-accent);
+            @media (max-width: $tablet){
+                background-image: url(../../../../assets/ceen-square.png);
+                background-repeat: no-repeat;
+                background-position: center;
+                background-size: 40px 40px;
+                max-height: 50px;
+            }
         }
 
         .SocialCard-section__img-body--img:hover {
@@ -287,6 +322,11 @@
         &:hover,
         a:hover {
             color: var(--clr-accent);
+        }
+
+        @media (max-width: $tablet){
+            margin-top: 2px;
+            font-size: 0.8rem;
         }
     }
 

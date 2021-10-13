@@ -12,7 +12,7 @@ export default function SwipeableNews() {
     const [selectedCategories, setSelectedCategories] = useState(["general"]);
     const [selectedNewCategory, setSelectedNewCategory] = useState();
     // const [deleteHistory, setDeleteHistory] = useState([]);
-
+    
     // ignore first render const
     const isFirstRender = useRef(true);
 
@@ -24,12 +24,13 @@ export default function SwipeableNews() {
             let category = "general";
             let pagesize = 3;
             fetch(
-                `http://107.152.46.30/api/projects?country=${country}&category=${category}&pagesize=${pagesize}`, {
-                    headers : { 
-                      'Content-Type': 'application/json',
-                      'Accept': 'application/json'
-                     }
-                  }
+                `http://107.152.46.30/api/projects?country=${country}&category=${category}&pagesize=${pagesize}`,
+                {
+                    headers: {
+                        "Content-Type": "application/json",
+                        Accept: "application/json",
+                    },
+                }
             )
                 .then((data) => data.json())
                 .then((data) => {
@@ -47,7 +48,8 @@ export default function SwipeableNews() {
                         ...categoryHeadlines,
                         headlineData,
                     ]);
-                }).catch(error => console.log(error.message));
+                })
+                .catch((error) => console.log(error.message));
             return;
         }
         setCurrCategoryHeadlines(
@@ -87,7 +89,14 @@ export default function SwipeableNews() {
                 </div>
             </div>
             <div className="swipeable-news-credits">
-                News provided by <a href="https://newsapi.org/" target="__blank" rel="noopener noreferrer">NewsAPI</a>
+                News provided by{" "}
+                <a
+                    href="https://newsapi.org/"
+                    target="__blank"
+                    rel="noopener noreferrer"
+                >
+                    NewsAPI
+                </a>
             </div>
         </div>
     );
