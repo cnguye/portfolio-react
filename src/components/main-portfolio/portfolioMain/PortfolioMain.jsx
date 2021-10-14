@@ -18,9 +18,9 @@ export default function PortfolioMain({
 }) {
     return (
         <React.Fragment>
-            {/* <Intro />
+            <Intro />
             <AboutMe />
-            <Background /> */}
+            <Background />
             <Projects
                 activeProject={activeProject}
                 setActiveProject={setActiveProject}

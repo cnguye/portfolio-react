@@ -50,7 +50,7 @@ function NavBar({
                         href={"#" + navMenu[0].href}
                         className="logo--text"
                         onMouseEnter={logoTextHandler}
-                        onMouseOut={logoTextHandler}
+                        onTouchStart={() => {setLogoText('christopher nguyen.')}}
                     >
                         {logoText}
                     </a>
