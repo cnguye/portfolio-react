@@ -48,5 +48,5 @@
   "devDependencies": {
     "ityped": "^1.0.3"
   },
-  "proxy": "http://107.152.46.30"
+  "proxy": "https://christopherhnguyen.com"
 }
