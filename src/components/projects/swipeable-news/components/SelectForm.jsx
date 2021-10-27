@@ -46,7 +46,7 @@ function SelectForm(props) {
         let pagesize = 3;
 
         fetch(
-            `http://107.152.46.30/api/projects?country=${country}&category=${category}&pagesize=${pagesize}`,
+            `http:/localhost:5000/api/projects?country=${country}&category=${category}&pagesize=${pagesize}`,
             {
                 headers: {
                     "Content-Type": "application/json",

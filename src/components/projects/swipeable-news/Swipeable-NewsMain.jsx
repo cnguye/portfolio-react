@@ -12,7 +12,7 @@ export default function SwipeableNews() {
     const [selectedCategories, setSelectedCategories] = useState(["general"]);
     const [selectedNewCategory, setSelectedNewCategory] = useState();
     // const [deleteHistory, setDeleteHistory] = useState([]);
-    
+
     // ignore first render const
     const isFirstRender = useRef(true);
 
@@ -24,7 +24,7 @@ export default function SwipeableNews() {
             let category = "general";
             let pagesize = 3;
             fetch(
-                `http://107.152.46.30/api/projects?country=${country}&category=${category}&pagesize=${pagesize}`,
+                `http://localhost:5000/api/projects?country=${country}&category=${category}&pagesize=${pagesize}`,
                 {
                     headers: {
                         "Content-Type": "application/json",
