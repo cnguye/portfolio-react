@@ -46,7 +46,7 @@ function SelectForm(props) {
         let pagesize = 3;
 
         fetch(
-            `https:christopherhnguyen.com/api/projects?country=${country}&category=${category}&pagesize=${pagesize}`,
+            `http://localhost:5000/api/projects?country=${country}&category=${category}&pagesize=${pagesize}`,
             {
                 headers: {
                     "Content-Type": "application/json",
