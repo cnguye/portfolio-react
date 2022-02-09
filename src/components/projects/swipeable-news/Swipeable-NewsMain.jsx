@@ -12,7 +12,7 @@ export default function SwipeableNews() {
     const [selectedCategories, setSelectedCategories] = useState(["general"]);
     const [selectedNewCategory, setSelectedNewCategory] = useState();
     // const [deleteHistory, setDeleteHistory] = useState([]);
-    
+
     // ignore first render const
     const isFirstRender = useRef(true);
 
