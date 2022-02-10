@@ -378,3 +378,4 @@ package-lock.json
 #package.json
 /src/components/projects/swipeable-news/config.js
 #server.js
+/.env
