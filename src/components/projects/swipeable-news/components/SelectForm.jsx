@@ -47,7 +47,6 @@ function SelectForm(props) {
 
         fetch(
             `http://localhost:5000/api/projects?country=${country}&category=${category}&pagesize=${pagesize}`,
-
             {
                 headers: {
                     "Content-Type": "application/json",
