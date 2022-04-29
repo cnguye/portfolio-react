@@ -1,19 +1,21 @@
 const express = require("express");
 const cors = require("cors");
+var http = require("http");
 const app = express();
+app.use(cors());
 const port = process.env.PORT || 5000;
 const request = require("request");
-const nodemailer = require("nodemailer");
-require("dotenv").config();
 
-// body-parse depricated.  Use two lines below instead:
-app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
-
-app.use(cors());
+// app.use(express.static(__dirname));
 
 // This displays message that the server running and listening to specified port
 app.listen(port, () => console.log(`Listening on port ${port}`));
+
+// var httpServer = http.createServer(app);
+
+// httpServer.listen(port, () => {
+//   console.log("Running HTTP on ", port);
+// });
 
 app.use((req, res, next) => {
     res.header("Access-Control-Allow-Origin", "*");
@@ -26,8 +28,11 @@ app.get("/express_backend", (req, res) => {
     res.send({ express: "YOUR EXPRESS BACKEND IS CONNECTED TO REACT" });
 });
 
-app.get("/api/projects", (req, res) => {
-    console.log("hello");
+app.get('/time', (req, res) => {
+    res.send(new Date().toLocaleTimeString())
+})
+
+app.get("/projects", (req, res) => {
     const country = req.query["country"];
     const category = req.query["category"];
     const pageSize = req.query["pagesize"];
@@ -44,39 +49,4 @@ app.get("/api/projects", (req, res) => {
 //     if (!error && response.statusCode == 200) {
 //         console.log(body); // Print the google web page.
 //     }
-// });
-
-// maaaaail serbaa
-
-// app.post("/send_mail", cors(), async (req, res) => {
-//     res.setHeader('Content-Type', 'application/json');
-//     const { text } = res.body;
-//     console.log(text);
-//     const transport = nodemailer.createTransport({
-//         host: process.env.MAIL_HOST,
-//         port: process.env.MAIL_PORT,
-//         auth: {
-//             user: process.env.MAIL_USER,
-//             pass: process.env.MAIL_PASS,
-//         },
-//     });
-
-//     const result = await transport.sendMail({
-//         from: process.env.MAIL_FROM,
-//         to: "ngyn.christopher@gmail.com",
-//         subject: "Interested in your portfolio!",
-//         html: `<div className="email" style="
-//         border: 1px solid black;
-//         padding: 20px;
-//         font-family: sans-serif;
-//         line-height: 2;
-//         font-size: 20px; 
-//         ">
-//         <h2>Here is your email!</h2>
-//         <p>${text}</p>
-    
-//         <p>All the best, Darwin</p>
-//          </div>`,
-//     });
-//     res.status(200).json(result);
 // });
