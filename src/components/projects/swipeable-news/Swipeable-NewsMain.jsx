@@ -16,6 +16,8 @@ export default function SwipeableNews() {
     // ignore first render const
     const isFirstRender = useRef(true);
 
+    const URL = process.env.NODE_ENV !== 'production' ? 'http://localhost:5000' : 'https://christopherhnguyen.com'; 
+
     useEffect(() => {
         if (isFirstRender.current) {
             isFirstRender.current = false;
@@ -24,7 +26,7 @@ export default function SwipeableNews() {
             let category = "general";
             let pagesize = 3;
             fetch(
-                `https://christopherhnguyen.com/api/projects?country=${country}&category=${category}&pagesize=${pagesize}`,
+                `${URL}/api/projects?country=${country}&category=${category}&pagesize=${pagesize}`,
                 {
                     headers: {
                         "Content-Type": "application/json",

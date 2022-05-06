@@ -1,19 +1,43 @@
 import React, { useState, useRef } from "react";
+import ReCaptchaV2 from "react-google-recaptcha";
+import { useForm, Controller } from "react-hook-form";
+
 import "./contact.scss";
+
+require("dotenv").config();
+
+const REACT_APP_CAPTCHA_SITE_KEY = "6LdBGm8eAAAAAA3GzEICgHC_q50IHphKnUowqTkO";
 
 export default function Contact() {
     const contactForm = useRef();
     const [isEmailSuccess, setIsEmailSuccess] = useState(false);
     const [isEmailSent, setIsEmailSent] = useState(false);
 
-    const [emailText, setEmailText] = useState("");
-    const submitHandler = async (e) => {
-        e.preventDefault();
+    const recaptchaRef = useRef();
+
+    // useForm variables
+    const {
+        register,
+        handleSubmit,
+        setValue,
+        formState: { errors },
+    } = useForm();
+
+    const onVerifyCaptcha = (token) => {
+        setValue("captchaToken", token);
+    };
+
+    const submitHandler = (data) => {
+        console.log(data);
         setIsEmailSent(true);
         try {
-            await fetch("http://localhost:5000/send_mail", {
+            fetch("http://localhost:5000/send_mail", {
                 method: "post",
-                body: JSON.stringify({body: emailText}),
+                body: JSON.stringify({
+                    name: "hello",
+                    email: "emailText",
+                    message: "messageText",
+                }),
                 headers: {
                     "Content-Type": "application/json",
                     Accept: "application/json",
@@ -29,10 +53,6 @@ export default function Contact() {
             setIsEmailSuccess(false);
             console.log(error);
         }
-    };
-
-    const emailHandler = (e) => {
-        setEmailText(e.target.value);
     };
 
     return (
@@ -53,7 +73,7 @@ export default function Contact() {
                             Send me a message..
                         </h2>
                         <form
-                            onSubmit={submitHandler}
+                            onSubmit={handleSubmit(submitHandler)}
                             className="right__item right__item--form"
                             ref={contactForm}
                         >
@@ -61,27 +81,40 @@ export default function Contact() {
                                 className="form__item"
                                 type="text"
                                 placeholder="name"
-                                name="from_name"
+                                name="name"
+                                {...register("name", { required: true, maxLength: 180})}
                             />
+                            {errors.name && <p>name is required</p>}
                             <input
                                 className="form__item"
                                 type="text"
                                 placeholder="email@email.com"
                                 name="from_email"
-                                onChange={emailHandler}
+                                {...register("email", { required: true, pattern: /^\S+@\S+$/i})}
                             />
+                            {errors.email && <p>valid email is required</p>}
                             <textarea
                                 className="form__item"
-                                placeholder="Doesn't work yet - Sorry!  Please email me instead!"
+                                placeholder="Your message here..."
                                 cols="30"
                                 rows="10"
                                 name="message"
+                                {...register("message", { required: true })}
                             ></textarea>
-                            <button
-                                type="submit"
-                                className="form__item btn__form form--submit"
-                            >
+                            {errors.message && <p>message is required</p>}
+
+                            <ReCaptchaV2
+                                sitekey={REACT_APP_CAPTCHA_SITE_KEY}
+                                name="reCapcha"
+                                ref={recaptchaRef}
+                                {...register("recaptcha", { required: true })}
+                                onVerifyCaptcha={onVerifyCaptcha}
+                            />
+                            {errors.recaptcha && <p>reCAPTCHA is required</p>}
+
+                            <button type="submit" className="form__item btn__form form--submit" onClick={()=>console.log(errors)}>
                                 Send
+                                
                             </button>
                         </form>
                     </div>
@@ -97,7 +130,7 @@ export default function Contact() {
                             className="btn__form btn__send-another"
                             onClick={() => setIsEmailSent(false)}
                         >
-                            Send another?
+                            {isEmailSuccess ? "Send another?" : "Try again"}
                         </button>
                     </div>
                 )}

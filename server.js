@@ -1,21 +1,25 @@
 const express = require("express");
 const cors = require("cors");
-var http = require("http");
 const app = express();
 app.use(cors());
 const port = process.env.PORT || 5000;
 const request = require("request");
+const nodemailer = require("nodemailer");
+
+require("dotenv").config();
+
+// credentials
+const GMAIL_USER = process.env.GMAIL_USER;
+const GMAIL_PASS = process.env.GMAIL_PASS;
+
+// body-parse depricated.  Use two lines below instead:
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 
 // app.use(express.static(__dirname));
 
 // This displays message that the server running and listening to specified port
 app.listen(port, () => console.log(`Listening on port ${port}`));
-
-// var httpServer = http.createServer(app);
-
-// httpServer.listen(port, () => {
-//   console.log("Running HTTP on ", port);
-// });
 
 app.use((req, res, next) => {
     res.header("Access-Control-Allow-Origin", "*");
@@ -32,7 +36,7 @@ app.get('/time', (req, res) => {
     res.send(new Date().toLocaleTimeString())
 })
 
-app.get("/projects", (req, res) => {
+app.get("/api/projects", (req, res) => {
     const country = req.query["country"];
     const category = req.query["category"];
     const pageSize = req.query["pagesize"];
@@ -50,3 +54,37 @@ app.get("/projects", (req, res) => {
 //         console.log(body); // Print the google web page.
 //     }
 // });
+
+// maaaaail serbaa
+
+// POST route from contact form
+app.post('/send_mail', (req, res) => {
+    // Instantiate the SMTP server
+    const mailTransporter = nodemailer.createTransport({
+        service: 'gmail',
+      auth: {
+        user: GMAIL_USER,
+        pass: GMAIL_PASS
+      }
+    })
+  
+    // Specify what the email will look like
+    const mailDetails  = {
+      from: 'Your sender info here', // This is ignored by Gmail
+      to: GMAIL_USER,
+      subject: 'christopherhnguyen.com: New message from ' + req.body.name,
+      text: `${req.body.name} (${req.body.email}) says: ${req.body.message}`
+    }
+  
+    // Attempt to send the email
+    mailTransporter.sendMail(mailDetails , (error, response) => {
+      if (error) {
+        console.log('contact-failure') // Show a page indicating failure
+        res.send(false);
+      }
+      else {
+        console.log('contact-success') // Show a page indicating success
+        res.send(true);
+      }
+    })
+  })
