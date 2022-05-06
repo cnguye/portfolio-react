@@ -36,7 +36,7 @@ app.get('/time', (req, res) => {
     res.send(new Date().toLocaleTimeString())
 })
 
-app.get("/api/projects", (req, res) => {
+app.get("/projects", (req, res) => {
     const country = req.query["country"];
     const category = req.query["category"];
     const pageSize = req.query["pagesize"];

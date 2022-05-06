@@ -24,6 +24,8 @@ function SelectForm(props) {
         []
     );
 
+    const URL = process.env.NODE_ENV !== 'production' ? 'http://localhost:5000' : 'https://christopherhnguyen.com/api'; 
+
     useEffect(() => {
         const filteredNewsAPICategories = newsAPICategories.filter(
             (category) => {
@@ -46,7 +48,7 @@ function SelectForm(props) {
         let pagesize = 3;
 
         fetch(
-            `https://christopherhnguyen.com/api/projects?country=${country}&category=${category}&pagesize=${pagesize}`,
+            `${URL}/projects?country=${country}&category=${category}&pagesize=${pagesize}`,
             {
                 headers: {
                     "Content-Type": "application/json",
