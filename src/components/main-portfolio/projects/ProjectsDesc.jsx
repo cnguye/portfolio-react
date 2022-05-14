@@ -23,6 +23,8 @@ export default function ProjectsDesc({
                 return <Todo />;
             case "swipeable-news":
                 return <SwipeableNews />;
+            case "pitim":
+                return <img className="selectedProject__project-img" src="./img/project_images/pitim_eg.png" alt=""/>;
             default:
                 return null;
         }
@@ -50,27 +52,23 @@ export default function ProjectsDesc({
     return (
         <div
             id="project-desc"
-            className={`project__desc ${activeProject !== "" ? "active" : ""} ${
-                projectDescHovered ? "hovered" : ""
-            }`}
+            className={`project__desc ${activeProject !== "" ? "active" : ""} ${projectDescHovered ? "hovered" : ""
+                }`}
         >
             <Card className="project__card" onClick={handleStopPropagation}>
                 {renderProject(activeProject)}
             </Card>
-
             <div
                 className={`project__overview ${isDescActive ? "active" : ""}`}
                 onClick={handleStopPropagation}
             >
                 <div
-                    className={`project__overview--container ${
-                        isDescActive ? "active" : ""
-                    }`}
+                    className={`project__overview--container ${isDescActive ? "active" : ""
+                        }`}
                 >
                     <div
-                        className={`project__overview--btn ${
-                            isDescActive ? "active" : ""
-                        }`}
+                        className={`project__overview--btn ${isDescActive ? "active" : ""
+                            }`}
                         onClick={handleOpenProjectDesc}
                     >
                         {isDescActive ? "X" : "?"}

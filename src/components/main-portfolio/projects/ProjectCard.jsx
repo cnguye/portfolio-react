@@ -10,7 +10,8 @@ export default function ProjectCard({
     setActiveProject,
     title,
     langs,
-    img,
+    card_img,
+    desc_img,
     projectKey,
     setMenuOpen,
     menuOpen,
@@ -39,7 +40,7 @@ export default function ProjectCard({
         >
             <img
                 className="project__img"
-                src={"./img/project_images/" + img}
+                src={"./img/project_images/" + card_img}
                 alt="todo-list img"
             />
             <div className="project__title">{title}</div>

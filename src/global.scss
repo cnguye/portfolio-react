@@ -23,10 +23,11 @@ $mobileViewHeight: calc(100vh - #{$mobileNavBarHeight});
 
 // colors
 // -- languages
-$clrReact: DeepSkyBlue;
-$clrJs: Gold;
-$clrSass: DeepPink;
-$clrHtml5: Crimson;
+$clrReact: rgb(0, 191, 255);
+$clrJs: rgb(255, 217, 0);
+$clrSass: rgb(255, 20, 145);
+$clrHtml5: rgb(220, 20, 60);
+$clrNpm: rgb(255, 33, 33);
 
 // -- buttons
 $submit: green;
@@ -147,7 +148,7 @@ $danger: red;
     }
 }
 
-$colors: $mainColor, $mainColorLite, $secondaryColor, $clrReact ,$clrJs ,$clrSass ,$clrHtml5 ;
+$colors: $mainColor, $mainColorLite, $secondaryColor, $clrReact, $clrJs, $clrSass, $clrHtml5, $clrNpm ;
 @for $i from 1 through length($colors) {
     @keyframes flashing-#{nth($colors, $i)} {
         0%{

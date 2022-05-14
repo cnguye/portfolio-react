@@ -35,6 +35,10 @@
         overflow: hidden;
         inset: 0;
 
+        .selectedProject__project-img {
+            margin: 0 auto;    
+        }
+
         @media (min-width: $tablet){
             position: relative;
             width: 90%;

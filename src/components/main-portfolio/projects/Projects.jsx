@@ -7,6 +7,7 @@ import {
     faJs,
     faSass,
     faHtml5,
+    faNpm,
 } from "@fortawesome/free-brands-svg-icons";
 
 import "./projects.scss";
@@ -27,7 +28,8 @@ export default function Projects({
             projectKey: "todo",
             title: "ToDo List",
             langs: [faReact, faJs, faSass, faHtml5],
-            img: "todo-list.png",
+            card_img: "todo-list.png",
+            desc_img: "",
             desc: {
                 features: [
                     "user input",
@@ -41,7 +43,8 @@ export default function Projects({
             projectKey: "swipeable-news",
             title: "Swipeable News",
             langs: [faReact, faJs, faSass, faHtml5],
-            img: "swipeable-news.png",
+            card_img: "swipeable-news.png",
+            desc_img: "",
             desc: {
                 features: [
                     "swipe delete items",
@@ -54,6 +57,32 @@ export default function Projects({
                     {
                         name: "Draggable Social Card",
                         url: "https://malcoded.com/posts/react-swipeable-list/",
+                    },
+                ],
+            },
+        }, 
+        {
+            projectKey: "pitim",
+            title: "PiTim",
+            langs: [faReact, faJs, faSass, faHtml5, faNpm],
+            card_img: "pitim_target.png",
+            desc_img: "pitim_eg",
+            desc: {
+                features: [
+                    "live updates of models and prices",
+                    "send notification through custom API",
+                    "save user settings through MySQL database",
+                    "Add, edit, delete, and reset changes",
+                ],
+                technologies: [
+                    { name: "PiTim", url: "https://pitim.christopherhnguyen.com" },
+                    {
+                        name: "NGINX",
+                        url: "",
+                    },
+                    {
+                        name: "Express.js",
+                        url: "",
                     },
                 ],
             },
@@ -86,7 +115,8 @@ export default function Projects({
                         key={project.projectKey}
                         projectKey={project.projectKey}
                         langs={project.langs}
-                        img={project.img}
+                        card_img={project.card_img}
+                        desc_img={project.desc_img}
                         setMenuOpen={setMenuOpen}
                         menuOpen={menuOpen}
                     />

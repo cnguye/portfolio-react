@@ -89,6 +89,10 @@
                 animation: flashing- + $clrHtml5 4s infinite;
                 animation-delay: 1300ms;
             }
+            &.project__lang--npm {
+                animation: flashing- + $clrNpm 4s infinite;
+                animation-delay: 1400ms;
+            }
         }
         &.active {
             animation: fadeIn 500ms ease 300ms forwards;
