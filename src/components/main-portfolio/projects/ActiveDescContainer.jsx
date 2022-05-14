@@ -39,7 +39,7 @@ export default function ActiveDescgrid({
                                         key={`technologies-item-${index}`}
                                         className="container__item container__technology-item"
                                     >
-                                        {technology.name}
+                                        <a className="technology-item--url" rel="noopener noreferrer" target="_blank" href={technology.url} >{technology.name}</a>
                                     </div>
                                 )
                             )}

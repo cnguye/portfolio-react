@@ -57,6 +57,19 @@
                     transition: background-color 300ms ease 300ms;
                     background-color: $secondaryColor;
                 }
+
+            }
+            .technology-item--url {
+                text-decoration: none;
+
+                &:visited, &:link {
+                   color: white; 
+                }
+
+                &:hover {
+                    color: black;
+                    text-decoration: underline;
+                }
             }
         }
     }

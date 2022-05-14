@@ -78,11 +78,11 @@ export default function Projects({
                     { name: "PiTim", url: "https://pitim.christopherhnguyen.com" },
                     {
                         name: "NGINX",
-                        url: "",
+                        url: "https://www.nginx.com/",
                     },
                     {
                         name: "Express.js",
-                        url: "",
+                        url: "https://expressjs.com/",
                     },
                 ],
             },
