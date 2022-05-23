@@ -6,7 +6,7 @@ import "./contact.scss";
 
 require("dotenv").config();
 
-const REACT_APP_CAPTCHA_SITE_KEY = "6LdBGm8eAAAAAA3GzEICgHC_q50IHphKnUowqTkO";
+const REACT_APP_CAPTCHA_SITE_KEY = process.env.G_CAPTCHA_SITE_KEY;
 
 export default function Contact() {
     const contactForm = useRef();
